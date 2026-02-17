@@ -1,42 +1,42 @@
-# ResQLink: Bayanihan Tech (Filipino Context Edition)
+# ResQLink: Bayanihan Tech (Light Cyber Edition)
 
-**Theme:** Ligtas ang Bawat Barangay | **Style:** Modern, Trusted, and Community-First.
-
----
-
-## 🇵🇭 Filipino Design Elements
-- **Local Context:** Use names like "Barangay San Jose" or "Marikina River Basin" in the data.
-- **Visuals:** Focus on realistic local rescue scenarios (rainy streets, orange rescue vests, civilian cooperation).
-- **Terminology:** Use "LGU" (Local Government Unit), "Barangay Command Center," and "Bayanihan Network."
+**Theme:** SaaS Authority + Filipino Resilience | **Style:** Professional, Architectural, Light-Themed Cyberpunk.
 
 ---
 
-## 🚀 The Filipino Master Prompt (Desktop)
+## 🇵🇭 Filipino SaaS Elements
+- **Local Context:** Use names like "Marikina River Basin" or "Brgy. San Antonio" in Monospace data tables.
+- **Visuals:** High-end 3D city terrain (Manila/Cebu) in desaturated grays.
+- **Terminology:** "LGU Command Center," "National Resilience Network," "Bayanihan Mesh."
+
+---
+
+## 🚀 The Filipino SaaS Master Prompt (Desktop)
 *Use this in Google Stitch for the full-page layout.*
 
-> **Prompt:** A comprehensive, full-page desktop landing page for "ResQLink," a Filipino-made disaster resilience platform. 
-> **Style:** High-end "Clean-Tech" aesthetic with a professional Filipino government and NGO feel. White, Slate Gray, and Emergency Orange palette.
+> **Prompt:** A comprehensive, full-page desktop landing page for "ResQLink." 
+> **Style:** High-end "Light Cyber" aesthetic. White background (#FBFBFB), Slate Gray (#1A1C1E) typography, and Emergency Orange (#FF4500) accents. 
+> **Typography:** Bold Serif headers (e.g., Playfair Display) and technical Monospace labels (e.g., JetBrains Mono).
 > **Layout:**
-> - **Hero:** A high-fidelity, realistic 3D map of a Philippine municipality (like Marikina or Malabon). A soft orange highlight covers the flood-prone streets. Headline: "SA RESQLINK, LIGTAS ANG BAWAT PAMILYA." Sub-headline: "Advanced flood forecasting and community-powered connectivity designed for the Filipino resilience."
-> - **Bayanihan Network Section:** A clean diagram showing three icons: A neighborhood sari-sari store, a resident's phone, and a Barangay hall, all connected by soft orange lines. Copy: "BAYANIHAN IN THE DIGITAL AGE. Even when the cell towers are down, our Mesh technology connects neighbor to neighbor to ensure help arrives."
-> - **The Story (Maya):** A warm, professional photo of a Filipina mother (Maya) safely preparing an emergency "Go Bag" with her children in a typical Filipino home. Overlay: "MAYA'S STORY: WE EVACUATED 4 HOURS BEFORE THE FLOOD ARRIVED."
-> - **Barangay Dashboard:** A bento-grid of "Community Intel" cards. Card 1: "River Level: Alert Level 2." Card 2: "Mesh Status: 12 Active Nodes in Brgy. San Jose." Card 3: "AI Triage: 5 Priority Cases identified."
-> - **LGU Portal:** A screenshot of a professional, clean dashboard for Mayors and Disaster Officers. Large map showing real-time GPS coordinates of volunteer rescuers.
-> - **Footer:** A simple sign-up for the "National Resilience Waitlist." Tagline: "Para sa mas ligtas at matatag na Pilipinas." 
-> **Vibe:** Grounded, patriotic, modern, and deeply trustworthy.
+> - **Hero:** A 3D topographic map of a Philippine city. Headline in Serif: "AGAD NA BABALA, AGAD NA PAGLIGTAS." Monospace ticker: `[STATUS: MONITORING_MARIKINA_RIVER]`.
+> - **Feature Grid:** A data-dense bento grid showing "AI Triage" and "BLE Mesh" with technical schematics and Filipino context (e.g., "LGU Gateway Node").
+> - **The Mission:** A clean section with a large Serif headline: "BAKIT MAHALAGA ANG RESQLINK?" and a Monospace list of measurable impacts on local communities.
+> - **LGU Portal:** A screenshot of a professional dashboard for Philippine Disaster Officers. Tables and heatmaps in high-contrast white and gray.
+> - **Footer:** "Para sa mas ligtas at matatag na Pilipinas." 
+> **Vibe:** Precise, authoritative, and deeply patriotic.
 
 ---
 
-## 🧩 Localized Section Prompts
+## 🧩 Localized SaaS Prompts
 
-### 1. The Hero: National Security & Safety
-> **Prompt:** A desktop hero section for a Filipino flood-warning site. Background is a realistic 3D topographic view of the Marikina River system. Headline: "AGAD NA BABALA, AGAD NA PAGLIGTAS." A large orange button says "Register Your Barangay." The UI is clean and professional, using 'Inter' font.
+### 1. The Hero: National Safety Dashboard
+> **Prompt:** A desktop hero section. Background is a realistic 3D map of the Philippine archipelago. Headline in a bold Serif: "LIGTAS ANG BAWAT PAMILYA." A sharp orange button says "REGISTER YOUR LGU." 
 
-### 2. The Narrative: The Power of Community
-> **Prompt:** A desktop landing page section. Left side is a warm photo of Filipino neighbors helping each other. Right side is a clean white panel with the heading: "NO SIGNAL? NO PROBLEM." Body text explains how the "Bayanihan Mesh" works in simple Taglish: "Kahit walang signal, abot pa rin ang tulong. Your phone connects to your neighbors to create a community lifeline."
+### 2. The Feature: Bayanihan Mesh Logic
+> **Prompt:** A technical landing page section. A minimalist diagram showing a Barangay Hall, a local home, and a rescue boat connected by 1px orange lines. Monospace labels for signal strength (RSSI) and Node IDs.
 
-### 3. The LGU Dashboard (Command Center)
-> **Prompt:** A professional SaaS dashboard for a Philippine LGU (Local Government Unit). It looks like a high-end government portal. Top metrics: "Reports from Brgy. 101," "Active Rescuers in Caloocan," "Flood Projection: 2.1m." The map shows local landmarks and street names. Clean, functional, and zero sci-fi elements.
+### 3. The LGU Portal: Professional Coordination
+> **Prompt:** A professional SaaS dashboard for a Philippine Local Government Unit. It looks like high-end financial or dev-tool software. Clear map, Monospace data tables for "Active SOS Reports," and Serif headers.
 
-### 4. Impact: Real Numbers for Real People
-> **Prompt:** A clean white section with three large bold headings: "4 ORAS" (Early Warning), "BUONG BARANGAY" (Connected), "40% BILIS" (Rescue Speed). Simple, grounded descriptions in a mix of English and Filipino that explain how these stats save lives during Typhoon season.
+### 4. Impact: Metrics for Resilience
+> **Prompt:** A clean white section with three large bold Serif numbers: "4 HOURS," "100%," "40%." Each with a Monospace description in Taglish/English explaining how these SaaS features save lives.

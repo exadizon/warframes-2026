@@ -1,40 +1,31 @@
-# Google Stitch Prompts: The Bridge Strategy (ResQLink Warframes Edition)
+# ResQLink: The "Grounded Cyber" Bridge
 
-Use these prompts in [Stitch](https://stitch.withgoogle.com/) to bridge your current functional product with the futuristic, data-heavy "Forecasting" theme.
-
----
-
-## 1. The "Flood Prediction" Hero (Desktop)
-**Goal:** Bridge the current ResQLink mission with the 2026 Flood Case Study.
-> **Prompt:** A high-end desktop landing page hero section. Background is a deep void black. The left side features a vertical, minimalist "Current Status" sidebar showing live barometric data in JetBrains Mono. The center stage is a 3D glass-textured terrain map of the Philippines. A glowing safety orange (#FF5F1F) heat-map overlay shows "Predicted Flood Zones." Large, bold typography in Space Grotesk reads: "RESQLINK: FORECASTING THE SURGE." Below it, a subtle "Production Version" badge links to the main site.
+Use these prompts in [Stitch](https://stitch.withgoogle.com/) to bridge the gap between technical SaaS functionality and high-end "Light Cyber" aesthetics.
 
 ---
 
-## 2. The "Intelligence Engine" Split-View (Desktop)
-**Goal:** Show the transition from Maya’s human story to raw AI data.
-> **Prompt:** A desktop scrollytelling section with a 60/40 split. 
-> - **Left Side (The Story):** A cinematic, high-contrast dark image of a citizen using a phone in a rainstorm. A text overlay says "MAYA: OFFLINE BUT CONNECTED." 
-> - **Right Side (The Raw Data):** A transparent glassmorphism panel showing the AI's backend logic. Include a "Raw Signal Feed" box with scrolling code, and a "Mesh Path Visualization" showing a line connecting "User_Maya" to "LGU_Gateway_Node." Use Cyan (#00F5FF) for data lines.
+## 1. The "Actionable Intel" Hero (Desktop)
+**Goal:** Immediate impact through technical authority.
+> **Prompt:** A high-end desktop hero section. Background is a desaturated light-gray satellite map. Headline in a bold Serif font: "PREDICT. CONNECT. PROTECT." Overlaid is a 1px data grid in black. An Emergency Orange (#FF4500) button labeled "JOIN THE MISSION." Use Monospace labels for coordinate data: `[LAT: 14.5995 | LON: 120.9842]`.
 
 ---
 
-## 3. The "Product Bridge" Command Center (Desktop)
-**Goal:** Promote the "Eventual Product" (The actual portal) using AWWWARDS aesthetics.
-> **Prompt:** A sophisticated desktop dashboard mockup for a Disaster Command Center. This is the 'ResQLink Pro' interface. 
-> - **Top Bar:** Global stats (Active SOS, Rescuers Online, Mesh Health). 
-> - **Main View:** A bento-grid layout. The largest tile is an interactive 3D map with pulsing SOS markers. 
-> - **Action Tile:** A "Grab-Style" dispatch card showing "Rescuer Leo" moving toward a mission. 
-> - **Product Promotion:** A bottom banner stating "Deployed in 12 Municipalities. Integrating AI Prediction for 2026." Use a mix of frosted glass effects and heavy typography.
+## 2. The "Intelligence Engine" Features (Desktop)
+**Goal:** SaaS-first feature showcase using bento grids.
+> **Prompt:** A data-dense bento grid section with 1px borders. 
+> - **Tile 1:** A technical flowchart showing "AI Triage" (Report -> Summarize -> Rank). 
+> - **Tile 2:** A 3D schematic of the "Bayanihan Mesh" network. 
+> - **Tile 3:** A "Grab-Style" status card: "Rescuer Leo: 250m Away." 
+> Style: White background, Slate Gray typography, Serif headers, and Monospace subtext.
 
 ---
 
-## 4. The "Global Resilience" Vision (Desktop)
-**Goal:** Show the scale and future of the ResQLink product.
-> **Prompt:** A minimalist desktop section featuring a 3D glowing wireframe globe. Points of light pulse across Southeast Asia. Massive numerical data points (e.g., "1.2M LIVES," "40% FASTER") are rendered in a hollow, outlined font that fills with Safety Orange as you scroll. The footer is a professional "Global Resilience Network" sign-up, mirroring the current resqlink.org waitlist but with a futuristic UI polish.
+## 3. The "Multi-Agency" Command Center (Desktop)
+**Goal:** Show the SaaS dashboard as a professional tool.
+> **Prompt:** A sophisticated desktop dashboard mockup. It looks like a high-end SaaS platform (similar to Stripe or Linear). Main area is a high-contrast white map with orange SOS markers. Side panel shows "Active Rescuers" and "Resource Allocation" tables in Monospace. Serif header: "UNIFIED COMMAND CENTER."
 
 ---
 
-## 💡 Stitch Iteration Tips
-- **To add "Warframe" vibe:** If a generation looks too "clean," add: *"Add mechanical UI elements, hexagonal patterns, and lens flare accents."*
-- **To add "Real Data" vibe:** If a generation looks too "artistic," add: *"Incorporate technical schematics, coordinate grids, and timestamped log entries in a monospaced font."*
-- **To ensure "Desktop" focus:** Always specify *"Wide aspect ratio, desktop browser view, 1440px width."*
+## 4. The "Global Blueprint" Vision (Desktop)
+**Goal:** Scale and impact metrics.
+> **Prompt:** A minimalist section with giant Serif numbers: "1.2M LIVES SAVED." Below each number is a Monospace description of UN SDG 11 & 13 alignment. A subtle grainy texture in the background with a 3D wireframe globe.

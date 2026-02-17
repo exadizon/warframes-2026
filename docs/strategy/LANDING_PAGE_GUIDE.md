@@ -1,52 +1,52 @@
-# Landing Page Master Guide: ResQLink (Warframes 2026 Edition)
+# Landing Page Master Guide: ResQLink (Light Cyber Edition)
 
 ## 1. Core Mission Alignment
-Based on the **Case Study: Forecasting Flood Risks**, the landing page must showcase:
-- **AI/ML for Prediction:** How ResQLink uses data to forecast floods *before* they happen.
-- **Actionable Information:** Clear UI for citizens to prepare.
-- **Data Visualization:** Interactive maps and risk heatmaps.
+Based on the **ResQLink 2026** "Light Cyber" SaaS-first strategy, the landing page must showcase:
+- **Technical Authority:** AI-powered coordination and multi-agency response.
+- **Measurable Impact:** Lives saved and UN SDG alignment.
+- **Architectural Clarity:** Information-dense bento grids and high-fidelity 3D maps.
 
 ---
 
 ## 2. Visual Identity & Style Guide
-**Goal:** Futuristic, urgent yet calming, and highly professional (AWWWARDS level).
+**Goal:** Professional, mission-critical, and "Awwwards-level" sophisticated.
 
 ### Color Palette
-- **Deep Void (#0A0A0B):** Background.
-- **Flood Warning Orange (#FF5F1F):** Primary Action & Alerts.
-- **Data Cyan (#00F5FF):** AI/ML pathways and technical data.
-- **Neutral Silver (#E0E0E0):** Typography and UI borders.
+- **Soft Alabaster (#FBFBFB):** Primary Background.
+- **Slate Gray (#1A1C1E):** Primary Typography & 1px Borders.
+- **Emergency Orange (#FF4500):** Functional Accents & Critical Alerts.
+- **Cool Gray (#E0E0E0):** Subtle UI elements and dividers.
 
-### Typography
-- **Heading:** *Inter Tight* or *Space Grotesk* (Bold, high tracking).
-- **Body:** *JetBrains Mono* (for data points) and *Plus Jakarta Sans* (for readability).
+### Typography (Serif x Monospace)
+- **Headlines:** *DM Serif Display* (Authoritative, Grounded, High-Contrast).
+- **Data/UI Labels:** *JetBrains Mono* (Technical, Precise, Mission-Critical).
+- **Body:** *Inter* (Clean, modern, universally readable).
 
 ---
 
-## 3. Scrollytelling Script (The Landing Page Flow)
+## 3. Mission-Based UX Flow (The "Mission Log")
 
 | Section | Narrative | Visual Element |
 | :--- | :--- | :--- |
-| **Hero (The Prediction)** | "Predicting the Surge Before the Rain." | 3D terrain of a city with a "blue glow" rising to show flood levels. |
-| **The AI Engine** | "Processing 1TB of weather data per second." | A bento grid showing real-time metrics (Barometric pressure, Soil moisture). |
-| **The Preparation** | "Personalized Survival Protocols." | A "Citizen Dashboard" mockup that changes based on the flood risk level. |
-| **The Mesh Network** | "Connectivity in the Eye of the Storm." | Visualizing BLE Mesh nodes connecting as traditional towers "fade out." |
-| **The Impact** | "Empowering 100+ Communities." | A scrolling list of success stories and live-saved counters. |
+| **Hero (Authority)** | "Actionable Intelligence When Lives Depend On It." | 3D desaturated satellite map with a 1px technical grid and GPS ticker. |
+| **The Engine (Bento)** | "AI Triage & Bayanihan Mesh Logic." | 3-column architectural bento grid showing technical schematics. |
+| **The Product (Command)** | "Unified Multi-Agency Coordination." | High-contrast SaaS dashboard mockup for rescuers and LGUs. |
+| **The Impact (Why)** | "1.2M+ Lives Protected. SDG 11 & 13." | Giant hollow Serif numbers with Monospace technical logs. |
+| **The Footer (Ready)** | "Ready to Transform Disaster Response?" | Minimalist 1px border footer with technical contact logs. |
 
 ---
 
-## 4. Bento Grid Layout (The "Command Center")
-The middle section of the landing page will feature a large **Bento Grid** to satisfy the "Data Visualization" and "AI/ML" requirements:
+## 4. Architectural Bento Grid Layout
+The central "Engine" section will feature a large **Bento Grid** to satisfy the technical depth requirements:
 
-1. **Top Left (2x2):** Live Flood Risk Map (Interactive).
-2. **Top Right (1x1):** Current Alert Level (Safety Orange).
-3. **Middle Right (1x1):** AI Confidence Score (Radial gauge).
-4. **Bottom Left (1x1):** Nearby Mesh Nodes (Pulse animation).
-5. **Bottom Center (2x1):** AI-Generated Preparation Checklist.
+1. **Card A (AI Triage):** Flowchart: [SUBMIT] → [SUMMARIZE] → [RANK] (Mono).
+2. **Card B (Mesh Logic):** 3D schematic of device-to-device mesh paths (Bayanihan).
+3. **Card C (Grab Matching):** Real-time "Rescuer Leo" mission proximity card.
+4. **Card D (Data Fusion):** Scrolling logs of barometric, seismic, and thermal data.
 
 ---
 
 ## 5. Research & Inspiration
-- **Reference:** *Active Theory* (Immersive 3D environments).
-- **Reference:** *Apple's product pages* (Smooth scroll transitions and large typography).
-- **Case Study Focus:** Ensure the "Flood Risk Forecasting" title is prominent to meet the competition's theme 15% criteria.
+- **Aesthetic:** "Light Cyber" (High-end architectural/dev-tool software).
+- **Typography:** *AWWWARDS* trends (High-contrast Serif x Monospace).
+- **UX Goal:** Project mission-critical reliability and technical authority.

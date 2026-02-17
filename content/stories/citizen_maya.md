@@ -1,16 +1,16 @@
 # User Story: Maya (The Citizen)
 
-**Scenario:** Super Typhoon "Odette II" hits. Power is out, and cellular towers are down.
+**Scenario:** Any Crisis (Typhoon, Urban Fire, or Earthquake). Power is out, and cellular towers are down.
 **Location:** Barangay San Antonio, Philippines.
 
 ### The Problem
-Maya is trapped on the second floor of her home with her elderly grandmother. The water is rising. She opens her phone, but there is "No Service."
+Maya is in a vulnerable situation (trapped by rising water, blocked by fire debris, or isolated after a tremor). She opens her phone, but there is "No Service." She needs to know she hasn't been forgotten.
 
-### The ResQLink Experience
-1. **Offline Connectivity:** ResQLink automatically switches to **BLE Mesh Mode**. Her phone connects to her neighbor's phone, which is connected to a nearby community beacon.
-2. **Instant SOS:** She taps the "Life-Threatening" button. She takes a photo of the rising water.
-3. **AI Triage:** Even offline, the local AI model on her device compresses the image and attaches GPS metadata.
-4. **Peace of Mind:** The app shows "Report Received by Nearby Mesh Node." She knows her cry for help is moving through the network.
+### The ResQLink Experience (The "Why")
+1. **Universal Connectivity:** ResQLink automatically switches to **BLE Mesh Mode**. Whether it's a flood or a fire, her phone finds a neighbor's device.
+2. **Multi-Hazard SOS:** She selects the specific emergency (e.g., "Life-Threatening Fire" or "Trapped in Debris").
+3. **AI Triage:** Even offline, the local AI analyzes her situation (photo or voice memo) and tags it with high-priority metadata.
+4. **Peace of Mind:** The app shows "Signal Received by Community Mesh." This is the core "Why"—the psychological safety of being connected when the grid fails.
 
 ### Result
-Maya's report reaches a rescue boat 500 meters away. They weren't even looking in her street until the SOS popped up on their "Grab-style" map.
+Maya's report reaches a local responder (Leo) who is specialized in the specific hazard. Her 12-minute mission to safety begins.

@@ -1,54 +1,52 @@
-# ResQLink: Grounded Resilience (The "Clean-Tech" Edition)
+# ResQLink: Grounded Resilience (The "Feature-Deep" Edition)
 
-**Visual Direction:** Professional, trustworthy, and human-centric. We are replacing "Cyberpunk" with "Modern SaaS" – high-end grays, soft whites, and strategic "Emergency Orange" accents.
+**Visual Direction:** Professional, technical, and architectural. Since this is a prototype, the landing page acts as a "Technical Briefing" that explicitly explains the platform's core mechanics.
 
 ---
 
 ## 🎨 Grounded Style Guide
-- **Primary:** Slate Gray (#1A1C1E) - *Professional & Solid*
-- **Background:** Soft Alabaster (#FBFBFB) or Deep Charcoal (#121212)
-- **Accent:** Safety Orange (#FF4500) - *Urgency & Action*
-- **Support:** Leaf Green (#2E7D32) - *Safety & Resolution*
-- **Typography:** *Inter* (Clean, modern, universally readable).
+- **Primary:** Slate Gray (#1A1C1E) - *Technical Authority*
+- **Background:** Soft Alabaster (#FBFBFB) - *Clean SaaS Feel*
+- **Accent:** Emergency Orange (#FF4500) - *Urgency & Action*
+- **Typography:** Serif Headlines (Grounding) + Monospace Body (Technicality).
 
 ---
 
-## 📑 The Master Narrative Flow
+## 📑 The Master Explanatory Flow
 
-1.  **The Promise (Hero):** Reliable flood forecasting for the modern city.
-2.  **The Mechanism (How it Works):** Simple visual of the "Mesh" connectivity. No jargon, just "People helping People."
-3.  **The Human Impact (Maya):** A relatable story of a family being notified early.
-4.  **The Professional Tool (Command Center):** Showcasing the actual dashboard that government units use.
-5.  **The Call to Action:** Building a more resilient future together.
-
----
-
-## 🚀 Comprehensive Master Prompt (Desktop)
-*Use this in Google Stitch for the full-page layout.*
-
-> **Prompt:** A comprehensive, full-page desktop landing page for "ResQLink," a disaster resilience platform. 
-> **Style:** Sophisticated "Clean-Tech" aesthetic. Mix of soft white and deep slate sections. Professional typography using 'Inter'.
-> **Layout:**
-> - **Hero:** A high-fidelity, realistic 3D satellite view of a coastal city. A clean, semi-transparent orange overlay shows "Predicted Flood Zone." Headline: "BECAUSE MINUTES SAVE LIVES." Sub-headline: "Smart flood forecasting that reaches you even when the cellular network fails."
-> - **Connectivity Section:** A clean, minimal diagram showing three simple icons: A phone, a neighbor's phone, and a community beacon, connected by soft, glowing lines. Text: "RELIABLE CONNECTIVITY. NO TOWERS REQUIRED."
-> - **Story Section:** A large, warm-toned photograph of a family safely packing a car. Overlay text: "MAYA'S STORY: NOTIFIED 4 HOURS EARLY."
-> - **Data Section:** A bento-grid of "Live Intelligence" cards. Card 1: A clean weather gauge. Card 2: A simple list of "Nearby Mesh Nodes." Card 3: "AI Risk Level: High." 
-> - **Command Center:** A screenshot of a professional, dark-themed dashboard with a map and a "Dispatch Team" button. 
-> - **Footer:** A minimalist sign-up form with a "Building Resilient Communities" tagline. 
-> **Vibe:** Grounded, trustworthy, high-end, and easy to understand. Avoid sci-fi/cyberpunk elements.
+1.  **The System Definition (Hero):** Defining ResQLink as a multi-hazard coordination platform for disconnected zones.
+2.  **The AI Mechanics (Bento Grid):** Explaining the step-by-step logic of offline submission, AI summarization, and priority reranking.
+3.  **The Connectivity Solution (Mesh):** Explaining how "Bluetooth Hopping" replaces failed cellular infrastructure.
+4.  **Stakeholder Portals (The Tools):** Explicitly detailing what Citizens, Rescuers, and LGUs can do on the platform.
+5.  **Humanitarian Impact (SDG):** Connecting SaaS features to UN Sustainable Development Goals for global resilience.
 
 ---
 
-## 🧩 Section-Specific "Grounded" Prompts
+## 🚀 Master Stitch Prompt (The "Prototype Briefing")
+*Use this in Google Stitch for a content-dense, educational layout.*
 
-### 1. The Hero: Professional Authority
-> **Prompt:** A desktop hero section for a flood prediction website. Background is a clean, realistic 3D satellite map of a city with a soft orange "risk area" highlight. Headline is "PROACTIVE PROTECTION." A primary button in solid Emergency Orange says "Get Early Alerts." The navigation is clean and white with "How it Works," "Community," and "Sign In."
+> **Prompt:** A high-fidelity, comprehensive desktop landing page for "ResQLink." 
+> **Aesthetic:** "Light Cyber" / Technical SaaS. Typography: Serif Headlines and Monospace UI labels. 
+> **Layout & Content:**
+> - **Hero:** High-fidelity 3D map. Headline: "ACTIONABLE INTELLIGENCE." Explanatory sub-text defines the platform as an AI-powered coordination tool that works without cellular towers using BLE Mesh.
+> - **The AI Engine (Features):** A 3-column bento grid. Card 1 explains "Edge Submission" (local processing). Card 2 explains "AI Summarization" (briefing dispatchers). Card 3 explains "Smart Reranking" (matching victims to responders).
+> - **Bayanihan Mesh (Connectivity):** A technical diagram section. Copy explicitly explains how SOS signals "hop" device-to-device through the community when the grid is down.
+> - **Specialized Portals (Product):** Three cards detailing the Citizen Portal (Reporting), Rescuer Dashboard (Matching), and LGU Command Center (Allocation).
+> - **Impact Metrics:** Hollow Serif numbers with Monospace logs explaining alignment with UN SDG 11 & 13.
+> **Vibe:** Precise, authoritative, and deeply educational. 
 
-### 2. The Logic: Human-Centric Connectivity
-> **Prompt:** A minimalist landing page section explaining "Mesh Networking." Use three high-quality 3D icons (Phone, House, Rescue Boat). Connect them with soft, pulsing orange lines. Copy: "HOW IT WORKS: YOUR PHONE BECOMES A LIFELINE. By connecting device-to-device, ResQLink ensures your SOS gets through even during total power outages."
+---
 
-### 3. The Dashboard: Grounded Product View
-> **Prompt:** A professional desktop dashboard UI for local government units. It looks like a high-end SaaS platform (similar to Stripe or Slack). Left sidebar for navigation. Main area is a clear, high-contrast map of a city with orange "Alert" dots. A side panel shows "Active Rescuers" with real names and photos. No "hacker" elements—just clean, actionable data.
+## 🧩 Section-Specific Explanatory Prompts
 
-### 4. The Impact: Simple Success Metrics
-> **Prompt:** A clean, white section with three large, black numbers: "4 HOURS" (Early Warning), "100%" (Mesh Connectivity), "40% FASTER" (Response Time). Below each number is a single sentence of simple, realistic explanation.
+### 1. The Hero: Defining the Platform
+> **Prompt:** A desktop hero section. **Visual:** A desaturated satellite map with a 1px grid. Headline (Serif): "PREDICT. CONNECT. PROTECT." Explanatory text (Mono): "ResQLink transforms disaster response by bridging the communication gap during power and network outages using AI and Mesh networking."
+
+### 2. The Feature: How the AI Works
+> **Prompt:** A landing page section explaining "AI Triage." Use three 1px border cards. Card 1: "Submit: Local AI scores severity." Card 2: "Summarize: Data is briefed for fast reading." Card 3: "Rank: Critical cases move to the top of the responder list."
+
+### 3. The Connectivity: How the Mesh Works
+> **Prompt:** A minimalist technical section. Diagram of three phones connecting to each other. Headline: "NO TOWERS? NO PROBLEM." Text explains: "Our Bayanihan Mesh uses Bluetooth Low Energy to relay messages from device to device until they reach an active rescue gateway."
+
+### 4. The Impact: Scaling Resilience
+> **Prompt:** A clean section showing a 3D globe. Copy explains: "ResQLink isn't just an app; it's a global blueprint for resilient cities. By optimizing response times, we directly reduce casualty rates in climate-related disasters."

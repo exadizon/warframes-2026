@@ -1,77 +1,71 @@
-# Comprehensive Landing Page Prompts: ResQLink "Warframes Edition"
+# Comprehensive Landing Page Prompts: ResQLink "Feature-Deep" Edition
 
-These prompts are designed to be used in **Google Stitch** to generate a full-page, high-fidelity desktop experience. Each prompt includes specific **Copywriting**, **Data points**, and **Visual instructions** to ensure the "Bridge Strategy" is executed perfectly.
-
----
-
-## 🏗️ The "Master Layout" Prompt (The Skeleton)
-*Use this first to generate the overall page flow.*
-
-> **Prompt:** A long-scroll, high-fidelity desktop landing page for "ResQLink," an AI-powered disaster response platform. The layout follows an immersive scrollytelling structure. 
-> 1. **Hero Section:** Immersive 3D terrain map with "Flood Prediction" overlays.
-> 2. **Narrative Section:** A cinematic split-screen telling the story of a citizen named Maya.
-> 3. **The Brains Section:** A complex bento-grid showing raw AI/ML data logs and BLE Mesh network paths.
-> 4. **Product Section:** A professional dark-mode dashboard (The Command Center).
-> 5. **Footer:** A global resilience map and waitlist CTA.
-> **Style:** Deep Void Black (#0A0A0B), Safety Orange (#FF5F1F), and Data Cyan (#00F5FF). Typography: Space Grotesk and JetBrains Mono. 1440px width.
+These prompts are designed for **Google Stitch** to generate a landing page that functions as a **Technical Prototype**. Each section is copy-heavy and explanatory, ensuring the user understands the mechanics of the platform within a single-page experience.
 
 ---
 
-## 🌊 Section 1: The Predictive Hero (Copy-Heavy)
-**Goal:** Establish the "Forecasting" theme immediately.
+## 🏗️ The "Feature-Deep" Master Prompt (The Skeleton)
+*Use this for the overall architectural and explanatory flow.*
 
-> **Prompt:** A desktop hero section. **Visual:** A 3D wireframe globe centered on the Philippines. Glowing orange polygons highlight areas of "High Flood Risk." 
+> **Prompt:** A high-fidelity, comprehensive desktop landing page for "ResQLink." 
+> **Style:** "Light Cyber" / Technical SaaS. Background: #FBFBFB (Soft Alabaster). Typography: Serif Headlines and Monospace UI labels. 
+> **Layout Strategy:** Instead of just listing features, each section must include a "How it Works" and "Why it Matters" explanation. 
+> 1. **Hero:** Defines the platform as a multi-hazard coordination system for the "disconnected."
+> 2. **AI Triage (Deep Dive):** Explains the 3-step logic (Submit -> Summarize -> Rank) with detailed technical copy.
+> 3. **The Mesh (Deep Dive):** Explains device-to-device Bluetooth "hopping" as a solution to tower failure.
+> 4. **The Portals:** Details the specific tools for Citizens, Rescuers, and LGUs.
+> 5. **SDG Impact:** Explicitly connects the tech to UN Sustainable Development Goals.
+> **Vibe:** Educational, mission-critical, and architectural. 1440px width.
+
+---
+
+## ⚡ Section 1: The Definition Hero
+**Goal:** Immediately explain what ResQLink is, not just what it does.
+
+> **Prompt:** A desktop hero section. **Visual:** A desaturated 3D city terrain map with an orange data overlay. 
 > **Copywriting:** 
-> - **Main Heading:** "PREDICTING THE SURGE. PROTECTING THE SOUL."
-> - **Sub-headline:** "ResQLink uses AI/ML to forecast flood levels with 98% accuracy, 4 hours before the first drop of rain hits the ground." 
-> - **CTA Button:** "ENTER THE COMMAND CENTER" (Safety Orange glow).
-> **Data Element:** A vertical scrolling ticker on the far right showing "Barometric Pressure: 980 hPa," "Soil Saturation: 92%," "Alert Status: CRITICAL."
+> - **H1 (Serif):** "ACTIONABLE INTELLIGENCE WHEN LIVES DEPEND ON IT."
+> - **Explanatory Sub-text (Mono):** "ResQLink is an AI-powered coordination platform designed for the eye of the storm. When cellular networks fail, we use BLE Mesh to bridge the gap between citizens and responders, turning every device into a lifeline."
+> **CTA:** "JOIN THE MISSION."
 
 ---
 
-## 👤 Section 2: The Maya Narrative (Story + Data)
-**Goal:** Humanize the technology.
+## 🧠 Section 2: The Intelligence Engine (AI Deep-Dive)
+**Goal:** Explain the "AI-Powered Triage" feature in detail.
 
-> **Prompt:** A desktop scrollytelling section. **Visual:** The left 50% is a high-contrast, blurred cinematic photo of a woman (Maya) in a rainy environment. The right 50% is a clean, glassmorphism UI panel.
+> **Prompt:** A 3-column bento grid with technical schematics. Each card explains a phase of the AI process.
 > **Copywriting:**
-> - **Heading:** "MEET MAYA. SECONDS SAVE LIVES."
-> - **Body:** "When the grid failed and cellular towers went dark, ResQLink’s BLE Mesh network turned Maya’s phone into a lifeline. No signal. No problem."
-> **Data Element:** A small "Maya’s Device" card showing: "Battery: 12%," "Mesh Nodes Nearby: 4," "SOS Status: TRANSMITTED VIA NEIGHBOR NODE."
+> 1. **Phase 01 [Report Submission]:** "Captures GPS, photo evidence, and sensor data locally on the device. AI begins initial severity scoring even while offline."
+> 2. **Phase 02 [AI Summarization]:** "Once data reaches a gateway, machine learning processes raw input into 1-sentence briefings for dispatchers, highlighting critical life-threats."
+> 3. **Phase 03 [Smart Reranking]:** "Priority is dynamically assigned based on victim severity, resource proximity, and real-time environment changes (e.g., road blockages)."
 
 ---
 
-## 🧠 Section 3: The Intelligence Engine (Raw AI/ML)
-**Goal:** Satisfy the "Information Accuracy" and "AI/ML Visualization" criteria.
+## 🌐 Section 3: The Bayanihan Mesh (Networking Deep-Dive)
+**Goal:** Explain the "BLE Mesh" feature so a non-technical user understands it.
 
-> **Prompt:** A dense, technical bento-grid layout for a desktop section. Background is a subtle hexagonal grid. 
+> **Prompt:** A full-width technical section. **Visual:** A diagram showing an SOS signal jumping from a Phone to a Smart-Meter to a Rescue Boat.
 > **Copywriting:**
-> - **Heading:** "THE INTELLIGENCE ENGINE."
-> - **Description:** "Processing 1.2TB of environmental data locally on the edge."
-> **Bento Grid Elements:**
-> 1. **Box A (Logic):** A flowchart showing AI Triage: [Input: Voice Memo] -> [AI Analysis: Life Threatening] -> [Priority: 1].
-> 2. **Box B (Raw Logs):** A scrolling terminal window in JetBrains Mono showing raw JSON SOS packets.
-> 3. **Box C (Visual):** A real-time wave-form of a BLE Mesh signal pulse in Data Cyan.
+> - **Heading (Serif):** "COMMUNICATION WITHOUT INFRASTRUCTURE."
+> - **Body (Mono):** "During major disasters, cell towers are the first to fail. ResQLink’s BLE Mesh technology bypasses the grid. Your phone connects to nearby devices using Bluetooth Low Energy, creating a community-powered 'bridge' that relays your SOS to the nearest active responder gateway."
 
 ---
 
-## 🛡️ Section 4: The Command Center (Product Promotion)
-**Goal:** Promote the "eventual" product.
+## 🛡️ Section 4: Three Portals, One Mission
+**Goal:** Explain the three specialized platforms and their unique tools.
 
-> **Prompt:** A full-width desktop dashboard mockup. This is the professional "ResQLink Admin Portal." 
-> **Visual:** A large dark-mode map with "Grab-style" icons for rescuers and pulsing heat-zones for SOS reports.
+> **Prompt:** Three horizontal cards previewing the specialized portal UIs.
 > **Copywriting:**
-> - **Heading:** "UNIFIED COMMAND. REAL-TIME RESOLUTION."
-> - **Sidebar Labels:** "Resource Allocation," "Rescuer Leo (En Route)," "Deploy AI Drone."
-> **Data Element:** A "Impact Tracker" widget showing "Total Response Time: 12.4 mins (40% faster than 2024 standards)."
+> - **Citizen Portal:** "One-tap emergency reporting with offline status tracking. See the exact status of your SOS through the mesh network."
+> - **Rescuer Dashboard:** "Self-assignment tools for volunteers. View real-time GPS heatmaps and coordinate multi-agency resources with zero overlap."
+> - **LGU Command Center:** "A unified dashboard for government units to track resource depletion, deploy drone units, and manage large-scale evacuations."
 
 ---
 
-## 🌎 Section 5: The Global Blueprint (CTA)
-**Goal:** Final impact and brand growth.
+## 🌎 Section 5: The Impact (SDG 11 & 13)
+**Goal:** Explain the humanitarian value of the SaaS features.
 
-> **Prompt:** A minimalist desktop footer section. **Visual:** A 3D glowing wireframe globe. 
+> **Prompt:** A minimalist section with large hollow Serif numbers.
 > **Copywriting:**
-> - **Heading:** "THE NEW STANDARD FOR GLOBAL RESILIENCE."
-> - **Body:** "ResQLink is expanding from local pilot programs to a global mesh network. Join the movement."
-> - **CTA:** A futuristic email input field with a "JOIN THE WAITLIST" button. 
-> **Visual Style:** Subtle grainy texture, heavy use of negative space, safety orange accents.
+> - **SDG 11 (Sustainable Cities):** "Reducing disaster-related deaths by optimizing response times through AI-driven triage and resource allocation."
+> - **SDG 13 (Climate Action):** "Strengthening community adaptive capacity to climate-related hazards like floods and fires through resilient communication networks."

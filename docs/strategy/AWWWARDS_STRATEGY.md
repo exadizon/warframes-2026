@@ -1,40 +1,36 @@
-# ResQLink: Warframes Competition Strategy & Content Structure
+# ResQLink: Warframes 2026 Strategy (The "Light Cyber" SaaS Edition)
 
-## 1. Vision: "The AWWWARDS Approach"
-To win a UI/UX competition like Warframes, we need to move beyond functional design into **Immersive Storytelling**. ResQLink isn't just a tool; it's a lifeline. The design should feel futuristic, reliable, and deeply human.
+## 1. Vision: "The Mission-Critical Authority"
+To win a UI/UX competition like Warframes, we must demonstrate **Technical Authority** and **Measurable Impact**. Our approach moves beyond simple scrollytelling into **Mission-Based UX**—a high-end SaaS-first strategy that projects reliability and specialized performance.
 
-### Design Principles (2026 Trends)
-- **Scrollytelling:** Use smooth, scroll-triggered animations to guide the user from a disaster scenario to the ResQLink solution.
-- **Bento Grids & Bold Typography:** High-impact headings (Serif for elegance or heavy Sans-Serif for urgency) paired with clean, information-dense bento grids for data.
-- **Dark Mode with "Glow" Accents:** A professional dark interface with primary accents (e.g., Safety Orange or Bio-Electric Blue) using soft glows to highlight critical SOS data.
-- **Micro-Interactions:** Every button press or data point hover should feel "alive" (e.g., haptic-like visual feedback, liquid transitions).
+### Design Principles (The "Light Cyber" Aesthetic)
+- **High-Contrast Typography:** Pair an authoritative **Serif** (e.g., *DM Serif Display*) for grounded headlines with a precise **Monospace** (e.g., *JetBrains Mono*) for technical UI labels.
+- **Light Cyber Look:** Move away from dark-mode "cyberpunk" tropes. Use a **#FBFBFB (Soft Alabaster)** background with **1px Slate Gray (#1A1C1E)** borders and **Emergency Orange (#FF4500)** as the sole functional accent.
+- **Architectural Bento Grids:** Structure complex features (AI Triage, BLE Mesh) in a modular, data-dense, and highly scannable grid layout.
+- **3D Topographic Data Viz:** Use desaturated 3D city maps with orange risk overlays to provide actionable technical context.
 
 ---
 
-## 2. Content Structure (The Case Study)
+## 2. Content Structure (SaaS-First Mission)
 
-### I. The Hook (The "Hero" Section)
-- **Visual:** A 3D-rendered globe or a mesh-network visualization of a city.
-- **Copy:** "When the Grid Fails, Humanity Connects."
-- **Story Integration:** Start with a real-time "active emergency" ticker.
+### I. The Hero: Technical Authority
+- **Visual:** A desaturated 3D satellite view of the Philippines with a 1px technical grid.
+- **Copy:** "ACTIONABLE INTELLIGENCE WHEN LIVES DEPEND ON IT."
+- **UX Goal:** Immediate technical authority. Show real-time GPS coordinates and mesh status logs.
 
-### II. The Problem: "The Chaos of Silence"
-- **Real Data:** Stats on cellular failure during typhoons/earthquakes.
-- **Story:** "Meet Maya." A short narrative about a citizen in a blacked-out zone.
-- **UX Goal:** Use low-saturation, high-contrast visuals to represent the "chaos."
+### II. The Engine: AI Triage & Mesh Logic
+- **Visual:** A 3-column architectural bento grid.
+- **Feature A:** The AI Triage Engine (Submission → Summarization → Reranking).
+- **Feature B:** The Bayanihan Mesh (Device-to-device connectivity paths).
+- **Feature C:** Grab-Style Dispatch (Rescuer Leo's 250m mission proximity).
 
-### III. The Solution: "Intelligence in the Dark"
-- **BLE Mesh Networking:** Explain the tech through a simple, interactive animation.
-- **AI Triage:** Show how raw SOS reports (photos/voice) transform into prioritized dashboard entries.
-- **Grab-Style Matching:** The "Uber-fication" of rescue.
+### III. The Product: Unified Command Center
+- **Visual:** A professional, high-contrast dashboard mockup for LGU and Rescue agencies.
+- **UX Goal:** Show the SaaS platform as a mission-critical tool for multi-agency coordination.
 
-### IV. Real Data & Impact
-- **Live Dashboard:** A conceptual "Command Center" view showing real GPS heatmaps and resource distribution.
-- **KPIs:** "Response time reduced by 40%", "100% connectivity in dead zones."
-
-### V. User Stories (The "Human" Element)
-- **The Rescuer:** Focus on the "Dashboard" and "Self-Assignment."
-- **The LGU:** Focus on "Resource Allocation" and "Unified Command."
+### IV. Measurable Impact: The "Why"
+- **KPIs:** "1.2M LIVES SAVED," "40% FASTER RESPONSE."
+- **SDG Alignment:** Explicitly connect technical features to UN Sustainable Development Goals 11 (Sustainable Cities) and 13 (Climate Action).
 
 ---
 
@@ -42,15 +38,15 @@ To win a UI/UX competition like Warframes, we need to move beyond functional des
 
 | Directory | Purpose |
 | :--- | :--- |
-| `content/stories` | Markdown files for Maya (Citizen), Leo (Rescuer), and Admin (LGU). |
+| `content/stories` | Mission logs for Maya (Citizen) and Leo (Rescuer) in a SaaS context. |
 | `content/data` | JSON/CSV sets of mock SOS data, GPS coordinates, and AI logs. |
-| `design/style-guide` | Typography, Color Palette (Safety Orange, Slate Gray, Neon Blue). |
-| `design/moodboard` | Links and screenshots from AWWWARDS (e.g., *Active Theory*, *Resn* style). |
+| `design/style-guide` | Typography (Serif x Mono) and Palette (Alabaster, Slate Gray, Emergency Orange). |
+| `docs/research` | Master Stitch prompts and mechanics alignment documentation. |
 
 ---
 
-## 4. Immediate Next Steps (Target: Wednesday Night)
-1. **[ ] Storyboarding:** Finalize the narrative flow in `content/stories`.
-2. **[ ] Data Generation:** Create "Real Data" JSONs in `content/data` for the UI to consume.
-3. **[ ] UI Component Library:** Start defining the "Bento Box" components in Figma.
-4. **[ ] Prototyping:** Implement the BLE Mesh animation and Scrollytelling hero section.
+## 4. Immediate Next Steps
+1. **[ ] Stitch Implementation:** Execute the `MASTER_STITCH_PROMPT.md` in Google Stitch.
+2. **[ ] Component Library:** Define the "Bento Box" and "1px Border" components in Figma.
+3. **[ ] Data Generation:** Populate `content/data` with mission-critical JSON logs for the UI.
+4. **[ ] Awwwards Submission:** Prepare the case study presentation focusing on the "Light Cyber" aesthetic.
