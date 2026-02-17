@@ -1,0 +1,22 @@
+[
+  {
+    "id": "SOS-001",
+    "timestamp": "2026-02-16T21:45:00Z",
+    "priority": "Critical",
+    "category": "Flood",
+    "location": { "lat": 14.5547, "lng": 121.0244 },
+    "status": "Assigned",
+    "ai_summary": "Rising water, 2 occupants, elderly present.",
+    "network_path": ["Phone_A", "Beacon_7", "LGU_Gateway"]
+  },
+  {
+    "id": "SOS-002",
+    "timestamp": "2026-02-16T21:47:30Z",
+    "priority": "High",
+    "category": "Medical",
+    "location": { "lat": 14.5580, "lng": 121.0300 },
+    "status": "Pending",
+    "ai_summary": "Possible limb fracture, requires extraction.",
+    "network_path": ["Phone_B", "Phone_C", "LGU_Gateway"]
+  }
+]
