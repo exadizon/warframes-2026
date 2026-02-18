@@ -1,55 +1,6 @@
 import React from "react";
+import { AlertTriangle, Mail, Handshake } from "lucide-react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-
-// Terminal-style log line for footer
-function FooterLog({
-  timestamp,
-  level,
-  message,
-  delay = 0,
-  isVisible = false,
-}) {
-  const levelColors = {
-    SYS: "rgba(255, 255, 255, 0.3)",
-    NET: "#3B82F6",
-    OK: "#22C55E",
-    SEC: "#8B5CF6",
-    VER: "var(--accent-orange)",
-  };
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "8px",
-        fontFamily: "var(--font-mono)",
-        fontSize: "10px",
-        lineHeight: 2,
-        opacity: isVisible ? 0.6 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(4px)",
-        transition: `all 400ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
-        whiteSpace: "nowrap",
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-      }}
-    >
-      <span style={{ color: "rgba(255, 255, 255, 0.12)" }}>{timestamp}</span>
-      <span
-        style={{
-          fontWeight: 600,
-          textTransform: "uppercase",
-          letterSpacing: "0.05em",
-          color: levelColors[level] || "rgba(255, 255, 255, 0.3)",
-          minWidth: "24px",
-        }}
-      >
-        {level}
-      </span>
-      <span style={{ color: "rgba(255, 255, 255, 0.35)" }}>{message}</span>
-    </div>
-  );
-}
 
 // Footer link column
 function FooterColumn({ title, links, isVisible = false, delay = 0 }) {
@@ -203,9 +154,7 @@ export default function Footer() {
   const { ref: footerRef, isVisible: footerVisible } = useScrollReveal({
     threshold: 0.05,
   });
-  const { ref: logsRef, isVisible: logsVisible } = useScrollReveal({
-    threshold: 0.15,
-  });
+
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({
     threshold: 0.1,
   });
@@ -213,43 +162,6 @@ export default function Footer() {
     threshold: 0.2,
   });
 
-  const systemLogs = [
-    {
-      ts: "23:59:57",
-      level: "SYS",
-      msg: "ResQLink Platform v2.0-beta — initialized",
-    },
-    {
-      ts: "23:59:57",
-      level: "NET",
-      msg: "BLE Mesh protocol: standby mode — awaiting activation",
-    },
-    {
-      ts: "23:59:58",
-      level: "SEC",
-      msg: "End-to-end encryption: AES-256 — active on all channels",
-    },
-    {
-      ts: "23:59:58",
-      level: "OK",
-      msg: "AI Triage Engine: model loaded — inference ready",
-    },
-    {
-      ts: "23:59:59",
-      level: "VER",
-      msg: "Warframes 2026 Competition Build — prototype v1",
-    },
-    {
-      ts: "23:59:59",
-      level: "SYS",
-      msg: "University of Makati // CCIS // UMak KALASAG DRRM",
-    },
-    {
-      ts: "00:00:00",
-      level: "OK",
-      msg: "All systems nominal — standing by for deployment",
-    },
-  ];
 
   const navigationLinks = [
     { label: "Features", href: "#intelligence" },
@@ -294,102 +206,6 @@ export default function Footer() {
       style={{ borderTop: "1px solid var(--border-primary)" }}
     >
       <div className="container">
-        {/* Technical Support Log — Terminal Style */}
-        <div
-          ref={logsRef}
-          style={{
-            backgroundColor: "var(--bg-dark)",
-            border: "1px solid var(--border-light)",
-            marginBottom: "var(--space-12)",
-            overflow: "hidden",
-          }}
-        >
-          {/* Terminal header */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              padding: "8px 16px",
-              borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  backgroundColor: "#FF5F56",
-                }}
-              />
-              <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  backgroundColor: "#FFBD2E",
-                }}
-              />
-              <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  backgroundColor: "#27C93F",
-                }}
-              />
-            </div>
-            <span
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "9px",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "rgba(255, 255, 255, 0.2)",
-              }}
-            >
-              system_status.log
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "9px",
-                color: "#22C55E",
-                letterSpacing: "0.08em",
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-              }}
-            >
-              <span
-                style={{
-                  width: 5,
-                  height: 5,
-                  borderRadius: "50%",
-                  backgroundColor: "#22C55E",
-                  animation: "status-blink 2s ease-in-out infinite",
-                }}
-              />
-              ONLINE
-            </span>
-          </div>
-
-          {/* Log entries */}
-          <div style={{ padding: "12px 16px" }}>
-            {systemLogs.map((log, i) => (
-              <FooterLog
-                key={i}
-                timestamp={log.ts}
-                level={log.level}
-                message={log.msg}
-                isVisible={logsVisible}
-                delay={200 + i * 70}
-              />
-            ))}
-          </div>
-        </div>
-
         {/* Main Footer Grid */}
         <div
           ref={gridRef}
@@ -525,14 +341,14 @@ export default function Footer() {
               }}
             >
               <ContactCard
-                icon="🚨"
+                icon={<AlertTriangle size={14} />}
                 label="Emergency Hotline"
                 value="911 (Available 24/7)"
                 isVisible={gridVisible}
                 delay={200}
               />
               <ContactCard
-                icon="📧"
+                icon={<Mail size={14} />}
                 label="Technical Support"
                 value="jvillarosa.a12240987@umak.edu.ph"
                 href="mailto:jvillarosa.a12240987@umak.edu.ph"
@@ -540,7 +356,7 @@ export default function Footer() {
                 delay={300}
               />
               <ContactCard
-                icon="🤝"
+                icon={<Handshake size={14} />}
                 label="Partnership Inquiries"
                 value="mcuizon.a12241782@umak.edu.ph"
                 href="mailto:mcuizon.a12241782@umak.edu.ph"

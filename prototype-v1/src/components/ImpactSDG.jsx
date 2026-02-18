@@ -1,4 +1,5 @@
 import React from 'react'
+import { Zap, FlaskConical, Shield, Users } from 'lucide-react'
 import { useScrollReveal, useCountUp } from '../hooks/useScrollReveal'
 
 // Animated hollow number that counts up
@@ -249,44 +250,6 @@ function SDGCard({
             ))}
           </div>
         </div>
-
-        {/* ResQLink's Impact — highlighted box */}
-        <div
-          style={{
-            marginTop: 'auto',
-            padding: 'var(--space-5) var(--space-6)',
-            borderLeft: '3px solid var(--accent-orange)',
-            backgroundColor: 'var(--accent-orange-soft)',
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(10px)',
-            transition: `all 600ms cubic-bezier(0.16, 1, 0.3, 1) ${delay + 500}ms`,
-          }}
-        >
-          <span
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '9px',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--accent-orange)',
-              display: 'block',
-              marginBottom: '6px',
-            }}
-          >
-            ResQLink&apos;s Impact
-          </span>
-          <p
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
-              lineHeight: 1.7,
-              color: 'var(--text-secondary)',
-            }}
-          >
-            {impact}
-          </p>
-        </div>
       </div>
     </div>
   )
@@ -403,21 +366,21 @@ export default function ImpactSDG() {
     {
       value: '1.2M',
       label: 'Lives Protected',
-      sublabel: 'Through faster response coordination and AI-optimized resource allocation',
+      sublabel: 'Through faster response coordination and optimized allocation',
       isOrange: true,
     },
     {
       value: '48',
       suffix: '%',
       label: 'Response Efficiency',
-      sublabel: 'Average improvement in rescue team deployment times with AI triage',
+      sublabel: 'Improvement in rescue deployment times with AI triage',
       isOrange: false,
     },
     {
       value: '2.4K',
       suffix: '+',
       label: 'Communities Served',
-      sublabel: 'With resilient BLE mesh communication networks across the Philippines',
+      sublabel: 'Resilient BLE mesh networks across the Philippines',
       isOrange: true,
     },
   ]
@@ -551,11 +514,10 @@ export default function ImpactSDG() {
           <SDGCard
             sdgNumber="11"
             sdgTitle="Sustainable Cities and Communities"
-            sdgDescription="Significantly reduce deaths, affected people, and economic losses caused by disasters, with a focus on protecting the poor and people in vulnerable situations."
+            sdgDescription="Reduce deaths, affected people, and economic losses caused by disasters — focusing on vulnerable populations."
             targets={[
               'Reduce disaster-related deaths and casualties',
               'Minimize number of people affected by hazards',
-              'Decrease direct economic losses relative to GDP',
               'Protect vulnerable and marginalized populations',
             ]}
             impact="ResQLink's AI-powered triage and offline-first features directly help reduce response times during emergencies, contributing to lower casualty rates and faster recovery in disaster-prone Philippine communities."
@@ -566,30 +528,16 @@ export default function ImpactSDG() {
           <SDGCard
             sdgNumber="13"
             sdgTitle="Climate Action"
-            sdgDescription="Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries, particularly vulnerable island nations."
+            sdgDescription="Strengthen resilience and adaptive capacity to climate-related hazards, particularly for vulnerable island nations."
             targets={[
               'Build community climate resilience capacity',
               'Strengthen early warning and preparedness systems',
-              'Improve disaster risk reduction strategies',
               'Enhance adaptive capacity to changing climate risks',
             ]}
             impact="Our platform builds community resilience through real-time disaster monitoring, predictive analytics, and coordinated response capabilities that adapt to changing climate risks across the Philippine archipelago."
             isVisible={sdgVisible}
             delay={200}
           />
-        </div>
-
-        {/* Terminal Log — Impact Data Stream */}
-        <div
-          ref={logRef}
-          style={{
-            marginBottom: 'var(--space-10)',
-            opacity: logVisible ? 1 : 0,
-            transform: logVisible ? 'translateY(0)' : 'translateY(16px)',
-            transition: 'all 700ms cubic-bezier(0.16, 1, 0.3, 1)',
-          }}
-        >
-          <ImpactLog entries={logEntries} isVisible={logVisible} baseDelay={300} />
         </div>
 
         {/* CTA Section — Ready to Transform */}
@@ -714,24 +662,24 @@ export default function ImpactSDG() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
               {[
                 {
-                  icon: '⚡',
+                  icon: <Zap size={16} />,
                   title: 'Early Access',
-                  desc: 'Be among the first to experience ResQLink\'s AI triage and mesh networking features',
+                  desc: 'First to experience AI triage and mesh networking',
                 },
                 {
-                  icon: '🧪',
+                  icon: <FlaskConical size={16} />,
                   title: 'Beta Testing',
-                  desc: 'Help shape the platform with your feedback — directly influence product direction',
+                  desc: 'Shape the platform with your direct feedback',
                 },
                 {
-                  icon: '🛡️',
+                  icon: <Shield size={16} />,
                   title: 'Priority Support',
-                  desc: 'Dedicated onboarding, training, and technical support for early adopters',
+                  desc: 'Dedicated onboarding and technical support',
                 },
                 {
-                  icon: '🤝',
+                  icon: <Users size={16} />,
                   title: 'LGU Partnerships',
-                  desc: 'For government units: pilot programs with full integration support and analytics',
+                  desc: 'Pilot programs with full integration support',
                 },
               ].map((benefit, i) => (
                 <div
@@ -755,7 +703,7 @@ export default function ImpactSDG() {
                       border: '1px solid var(--border-light)',
                       backgroundColor: 'var(--bg-secondary)',
                       flexShrink: 0,
-                      fontSize: '14px',
+                      color: 'var(--accent-orange)',
                     }}
                   >
                     {benefit.icon}
@@ -784,44 +732,6 @@ export default function ImpactSDG() {
                     </span>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Partners badge */}
-            <div
-              style={{
-                marginTop: 'var(--space-8)',
-                paddingTop: 'var(--space-6)',
-                borderTop: '1px solid var(--border-lighter)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: 'var(--space-6)',
-                flexWrap: 'wrap',
-              }}
-            >
-              {[
-                { label: '2 Local Gov\'t Units', icon: '🏛️' },
-                { label: '2 Academic Orgs', icon: '🎓' },
-                { label: '1 Award', icon: '🏆' },
-              ].map((partner, i) => (
-                <span
-                  key={partner.label}
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '10px',
-                    letterSpacing: '0.06em',
-                    color: 'var(--text-tertiary)',
-                    padding: '4px 10px',
-                    border: '1px solid var(--border-lighter)',
-                    backgroundColor: 'var(--bg-secondary)',
-                  }}
-                >
-                  <span style={{ fontSize: '12px' }}>{partner.icon}</span>
-                  {partner.label}
-                </span>
               ))}
             </div>
           </div>

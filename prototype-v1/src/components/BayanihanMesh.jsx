@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Radio, RefreshCw, BatteryLow, Shield, Waves } from "lucide-react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 // Animated mesh network visualization on dark background
@@ -166,9 +167,9 @@ function MeshDiagram({ isVisible }) {
           // Animated signal line
           const grad = ctx.createLinearGradient(a.px, a.py, b.px, b.py);
           const pulsePhase = Math.sin(t * 2) * 0.5 + 0.5;
-          grad.addColorStop(0, `rgba(255, 69, 0, ${0.4 + pulsePhase * 0.3})`);
-          grad.addColorStop(0.5, `rgba(255, 69, 0, ${0.6 + pulsePhase * 0.2})`);
-          grad.addColorStop(1, `rgba(255, 69, 0, ${0.4 + pulsePhase * 0.3})`);
+          grad.addColorStop(0, `rgba(0, 41, 154, ${0.4 + pulsePhase * 0.3})`);
+          grad.addColorStop(0.5, `rgba(0, 41, 154, ${0.6 + pulsePhase * 0.2})`);
+          grad.addColorStop(1, `rgba(0, 41, 154, ${0.4 + pulsePhase * 0.3})`);
           ctx.strokeStyle = grad;
           ctx.lineWidth = 2;
         } else {
@@ -213,16 +214,16 @@ function MeshDiagram({ isVisible }) {
               py,
               16,
             );
-            particleGrad.addColorStop(0, "rgba(255, 69, 0, 0.8)");
-            particleGrad.addColorStop(0.4, "rgba(255, 69, 0, 0.3)");
-            particleGrad.addColorStop(1, "rgba(255, 69, 0, 0)");
+            particleGrad.addColorStop(0, "rgba(0, 41, 154, 0.8)");
+            particleGrad.addColorStop(0.4, "rgba(0, 41, 154, 0.3)");
+            particleGrad.addColorStop(1, "rgba(0, 41, 154, 0)");
             ctx.fillStyle = particleGrad;
             ctx.beginPath();
             ctx.arc(px, py, 16, 0, Math.PI * 2);
             ctx.fill();
 
             // Particle core
-            ctx.fillStyle = "#FF4500";
+            ctx.fillStyle = "#00299A";
             ctx.beginPath();
             ctx.arc(px, py, 3, 0, Math.PI * 2);
             ctx.fill();
@@ -242,7 +243,7 @@ function MeshDiagram({ isVisible }) {
 
           // Outer pulse ring
           const pulseRadius = node.radius + pulsePhase * 20;
-          ctx.strokeStyle = `rgba(255, 69, 0, ${0.3 * (1 - pulsePhase)})`;
+          ctx.strokeStyle = `rgba(0, 41, 154, ${0.3 * (1 - pulsePhase)})`;
           ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.arc(nx, ny, pulseRadius, 0, Math.PI * 2);
@@ -252,7 +253,7 @@ function MeshDiagram({ isVisible }) {
           const pulse2 = (t * 3 + 1.5) % (Math.PI * 2);
           const p2Phase = Math.sin(pulse2) * 0.5 + 0.5;
           const pulse2Radius = node.radius + p2Phase * 30;
-          ctx.strokeStyle = `rgba(255, 69, 0, ${0.15 * (1 - p2Phase)})`;
+          ctx.strokeStyle = `rgba(0, 41, 154, ${0.15 * (1 - p2Phase)})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.arc(nx, ny, pulse2Radius, 0, Math.PI * 2);
@@ -267,22 +268,22 @@ function MeshDiagram({ isVisible }) {
             ny,
             node.radius,
           );
-          sosGrad.addColorStop(0, "rgba(255, 69, 0, 0.25)");
-          sosGrad.addColorStop(1, "rgba(255, 69, 0, 0.08)");
+          sosGrad.addColorStop(0, "rgba(0, 41, 154, 0.25)");
+          sosGrad.addColorStop(1, "rgba(0, 41, 154, 0.08)");
           ctx.fillStyle = sosGrad;
           ctx.beginPath();
           ctx.arc(nx, ny, node.radius, 0, Math.PI * 2);
           ctx.fill();
 
           // Node border
-          ctx.strokeStyle = "rgba(255, 69, 0, 0.7)";
+          ctx.strokeStyle = "rgba(0, 41, 154, 0.7)";
           ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.arc(nx, ny, node.radius, 0, Math.PI * 2);
           ctx.stroke();
 
           // SOS icon
-          ctx.fillStyle = "#FF4500";
+          ctx.fillStyle = "#00299A";
           ctx.font = 'bold 10px "JetBrains Mono", monospace';
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
@@ -290,7 +291,7 @@ function MeshDiagram({ isVisible }) {
 
           // Label
           ctx.font = '8px "JetBrains Mono", monospace';
-          ctx.fillStyle = "rgba(255, 69, 0, 0.6)";
+          ctx.fillStyle = "rgba(0, 41, 154, 0.6)";
           ctx.textAlign = "center";
           ctx.fillText(node.label.toUpperCase(), nx, ny + node.radius + 12);
         } else if (node.type === "gateway") {
@@ -403,7 +404,7 @@ function MeshDiagram({ isVisible }) {
           ctx.font = '7px "JetBrains Mono", monospace';
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-          ctx.fillText("📱", nx, ny);
+          ctx.fillText("PH", nx, ny);
         }
       }
 
@@ -420,7 +421,7 @@ function MeshDiagram({ isVisible }) {
 
       // Bottom-right status
       ctx.textAlign = "right";
-      ctx.fillStyle = "rgba(255, 69, 0, 0.3)";
+      ctx.fillStyle = "rgba(0, 41, 154, 0.3)";
       ctx.fillText("SIGNAL PROPAGATION: ACTIVE", width - 16, height - 16);
 
       // Bottom-left signal path indicator
@@ -747,8 +748,8 @@ export default function BayanihanMesh() {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  border: "1.5px solid #FF4500",
-                  backgroundColor: "rgba(255,69,0,0.2)",
+                  border: "1.5px solid #00299A",
+                  backgroundColor: "rgba(0,41,154,0.2)",
                 }}
               />
               SOS Origin
@@ -815,14 +816,14 @@ export default function BayanihanMesh() {
                 display: "flex",
                 alignItems: "center",
                 gap: "6px",
-                color: "rgba(255,69,0,0.5)",
+                color: "rgba(0,41,154,0.5)",
               }}
             >
               <span
                 style={{
                   width: 12,
                   height: 1,
-                  backgroundColor: "rgba(255,69,0,0.5)",
+                  backgroundColor: "rgba(0,41,154,0.5)",
                 }}
               />
               Signal Path
@@ -893,8 +894,7 @@ export default function BayanihanMesh() {
                   marginBottom: "var(--space-6)",
                 }}
               >
-                Each phone in range automatically relays the signal forward,
-                creating an ad-hoc network that bypasses destroyed cell towers.
+                Each phone relays the signal forward, bypassing destroyed cell towers.
               </p>
             </div>
 
@@ -945,71 +945,6 @@ export default function BayanihanMesh() {
                 delay={700}
                 isLast
               />
-            </div>
-
-            {/* Stats bar */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "1px",
-                backgroundColor: "var(--border-lighter)",
-                border: "1px solid var(--border-lighter)",
-                paddingTop: "var(--space-6)",
-                marginTop: "var(--space-8)",
-              }}
-            >
-              {[
-                { label: "Max Range", value: "~100m", sub: "per hop" },
-                { label: "Avg Latency", value: "<200ms", sub: "end-to-end" },
-                { label: "Power Draw", value: "Ultra-Low", sub: "BLE 5.0" },
-              ].map((stat, i) => (
-                <div
-                  key={stat.label}
-                  style={{
-                    backgroundColor: "var(--bg-secondary)",
-                    padding: "var(--space-4)",
-                    textAlign: "center",
-                    opacity: contentVisible ? 1 : 0,
-                    transition: `opacity 500ms ease ${800 + i * 100}ms`,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: "9px",
-                      fontWeight: 600,
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      color: "var(--text-muted)",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    {stat.label}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: "16px",
-                      fontWeight: 700,
-                      color: "var(--text-primary)",
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {stat.value}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: "9px",
-                      color: "var(--text-muted)",
-                      marginTop: "2px",
-                    }}
-                  >
-                    {stat.sub}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -1066,9 +1001,7 @@ export default function BayanihanMesh() {
                   marginBottom: "var(--space-2)",
                 }}
               >
-                The Bayanihan Mesh protocol is purpose-built for the Philippine
-                disaster context, where typhoons routinely destroy cell towers
-                and power grids.
+                Purpose-built for Philippine disasters where typhoons destroy cell towers and power grids.
               </p>
             </div>
 
@@ -1081,72 +1014,40 @@ export default function BayanihanMesh() {
               }}
             >
               <SpecBullet
-                icon="📡"
+                icon={<Radio size={16} />}
                 title="Offline Mesh Networking"
-                description="No internet, no cell towers, no problem. BLE creates a device-to-device network using only the phones already in the community."
+                description="BLE creates a device-to-device network using phones already in the community."
                 isVisible={specsVisible}
                 delay={0}
               />
               <SpecBullet
-                icon="🔄"
+                icon={<RefreshCw size={16} />}
                 title="Device-to-Device Relay"
-                description="Each smartphone acts as a signal repeater, automatically forwarding SOS messages to extend range far beyond a single Bluetooth connection."
+                description="Each smartphone relays SOS messages, extending range beyond Bluetooth limits."
                 isVisible={specsVisible}
                 delay={100}
               />
               <SpecBullet
-                icon="🔋"
-                title="Ultra-Low Power Consumption"
-                description="Bluetooth Low Energy 5.0 protocol ensures the mesh network can operate for hours on minimal battery — critical when power is out."
+                icon={<BatteryLow size={16} />}
+                title="Ultra-Low Power"
+                description="BLE 5.0 operates for hours on minimal battery."
                 isVisible={specsVisible}
                 delay={200}
               />
               <SpecBullet
-                icon="🛡️"
+                icon={<Shield size={16} />}
                 title="Self-Healing Network"
-                description="If any node goes offline, the mesh automatically re-routes signals through alternative paths, maintaining communication resilience."
+                description="Auto-reroutes signals if any node goes offline."
                 isVisible={specsVisible}
                 delay={300}
               />
               <SpecBullet
-                icon="🌊"
-                title="Disaster-Hardened Protocol"
-                description="Designed for Typhoon Yolanda-scale events where 90%+ of cellular infrastructure is destroyed. Bayanihan Mesh keeps communities connected."
+                icon={<Waves size={16} />}
+                title="Disaster-Hardened"
+                description="Built for events where 90%+ of cellular infrastructure is destroyed."
                 isVisible={specsVisible}
                 delay={400}
               />
-            </div>
-
-            {/* Bayanihan note */}
-            <div
-              style={{
-                marginTop: "var(--space-8)",
-                padding: "var(--space-5) var(--space-6)",
-                borderLeft: "3px solid var(--accent-orange)",
-                backgroundColor: "var(--accent-orange-soft)",
-                opacity: specsVisible ? 1 : 0,
-                transform: specsVisible ? "translateY(0)" : "translateY(12px)",
-                transition: "all 600ms cubic-bezier(0.16, 1, 0.3, 1) 600ms",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "11px",
-                  lineHeight: 1.7,
-                  color: "var(--text-secondary)",
-                  fontStyle: "italic",
-                }}
-              >
-                <strong
-                  style={{ fontStyle: "normal", color: "var(--accent-orange)" }}
-                >
-                  Bayanihan{" "}
-                </strong>
-                — Filipino tradition of communal unity. In ResQLink, every phone
-                that relays a signal embodies this spirit: neighbors helping
-                neighbors reach safety, one Bluetooth hop at a time.
-              </p>
             </div>
           </div>
         </div>
