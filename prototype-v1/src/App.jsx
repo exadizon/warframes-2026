@@ -679,22 +679,143 @@ function MissionTracker() {
   );
 }
 
-export default function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
+// Branded loading screen — first impression for judges
+function LoadingScreen({ onComplete }) {
+  const [phase, setPhase] = useState("brand");
 
   useEffect(() => {
-    // Small delay to ensure fonts are loaded before revealing content
-    const timer = setTimeout(() => setIsLoaded(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
+    const timers = [
+      setTimeout(() => setPhase("tagline"), 600),
+      setTimeout(() => setPhase("exit"), 1800),
+      setTimeout(() => {
+        setPhase("done");
+        onComplete();
+      }, 2500),
+    ];
+    return () => timers.forEach(clearTimeout);
+  }, [onComplete]);
+
+  if (phase === "done") return null;
 
   return (
     <div
       style={{
-        opacity: isLoaded ? 1 : 0,
-        transition: "opacity 600ms cubic-bezier(0.16, 1, 0.3, 1)",
+        position: "fixed",
+        inset: 0,
+        zIndex: 9999,
+        backgroundColor: "#1A1C1E",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "16px",
+        opacity: phase === "exit" ? 0 : 1,
+        transition: "opacity 700ms cubic-bezier(0.76, 0, 0.24, 1)",
+        pointerEvents: phase === "exit" ? "none" : "auto",
       }}
     >
+      {/* Brand mark */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "12px",
+          opacity: phase === "exit" ? 0 : 1,
+          transform:
+            phase !== "exit" ? "translateY(0)" : "translateY(-10px)",
+          transition: "all 600ms cubic-bezier(0.16, 1, 0.3, 1)",
+        }}
+      >
+        <span
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: 36,
+            height: 36,
+            backgroundColor: "#00299A",
+            color: "white",
+            fontFamily: '"JetBrains Mono", monospace',
+            fontSize: "16px",
+            fontWeight: 700,
+            borderRadius: "4px",
+          }}
+        >
+          R
+        </span>
+        <span
+          style={{
+            fontFamily: '"DM Serif Display", serif',
+            fontSize: "clamp(24px, 3vw, 36px)",
+            letterSpacing: "0.12em",
+            color: "rgba(255, 255, 255, 0.95)",
+          }}
+        >
+          RESQLINK
+        </span>
+      </div>
+
+      {/* Tagline */}
+      <div
+        style={{
+          fontFamily: '"JetBrains Mono", monospace',
+          fontSize: "10px",
+          letterSpacing: "0.25em",
+          textTransform: "uppercase",
+          color: "rgba(255, 255, 255, 0.35)",
+          opacity: phase === "tagline" ? 1 : phase === "exit" ? 0.5 : 0,
+          transform:
+            phase !== "brand" ? "translateY(0)" : "translateY(8px)",
+          transition:
+            "all 600ms cubic-bezier(0.16, 1, 0.3, 1) 100ms",
+        }}
+      >
+        Actionable Intelligence When Lives Depend On It
+      </div>
+
+      {/* Loading bar */}
+      <div
+        style={{
+          width: "120px",
+          height: "2px",
+          backgroundColor: "rgba(255, 255, 255, 0.06)",
+          marginTop: "24px",
+          overflow: "hidden",
+          borderRadius: "1px",
+        }}
+      >
+        <div
+          style={{
+            height: "100%",
+            backgroundColor: "#00299A",
+            width:
+              phase === "brand"
+                ? "30%"
+                : phase === "tagline"
+                  ? "80%"
+                  : "100%",
+            transition:
+              "width 1200ms cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <>
+      <LoadingScreen onComplete={() => setIsLoaded(true)} />
+      <div
+        style={{
+          opacity: isLoaded ? 1 : 0,
+          transform: isLoaded ? "translateY(0)" : "translateY(20px)",
+          transition: "all 800ms cubic-bezier(0.16, 1, 0.3, 1)",
+        }}
+      >
       {/* Skip to content — Accessibility */}
       <a href="#hero" className="skip-to-content">
         Skip to main content
@@ -746,6 +867,7 @@ export default function App() {
 
       {/* Footer */}
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

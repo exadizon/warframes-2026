@@ -1,9 +1,37 @@
 import React from 'react'
 import { Zap, FlaskConical, Shield, Users } from 'lucide-react'
-import { useScrollReveal, useCountUp } from '../hooks/useScrollReveal'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
-// Animated hollow number that counts up
-function ImpactMetric({ value, suffix = '', prefix = '', label, sublabel, isOrange = false, isVisible = false, delay = 0 }) {
+// Animated counter that counts up when scrolled into view
+function AnimatedNumber({ end, decimals = 0, suffix = '', prefix = '', isVisible, delay = 0 }) {
+  const [current, setCurrent] = React.useState(0)
+  const hasAnimated = React.useRef(false)
+
+  React.useEffect(() => {
+    if (!isVisible || hasAnimated.current) return
+    hasAnimated.current = true
+    const duration = 2200
+    const startTime = performance.now() + delay
+    let frame
+
+    const animate = (t) => {
+      const elapsed = t - startTime
+      if (elapsed < 0) { frame = requestAnimationFrame(animate); return }
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCurrent(eased * end)
+      if (progress < 1) frame = requestAnimationFrame(animate)
+    }
+
+    frame = requestAnimationFrame(animate)
+    return () => { if (frame) cancelAnimationFrame(frame) }
+  }, [isVisible, end, delay])
+
+  return `${prefix}${current.toFixed(decimals)}${suffix}`
+}
+
+// Animated hollow number with counter
+function ImpactMetric({ end, decimals = 0, suffix = '', prefix = '', label, sublabel, isOrange = false, isVisible = false, delay = 0 }) {
   return (
     <div
       style={{
@@ -30,7 +58,7 @@ function ImpactMetric({ value, suffix = '', prefix = '', label, sublabel, isOran
           position: 'relative',
         }}
       >
-        {prefix}{value}{suffix}
+        <AnimatedNumber end={end} decimals={decimals} suffix={suffix} prefix={prefix} isVisible={isVisible} delay={delay} />
       </div>
 
       {/* Label */}
@@ -359,45 +387,35 @@ export default function ImpactSDG() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.2 })
   const { ref: metricsRef, isVisible: metricsVisible } = useScrollReveal({ threshold: 0.15 })
   const { ref: sdgRef, isVisible: sdgVisible } = useScrollReveal({ threshold: 0.08 })
-  const { ref: logRef, isVisible: logVisible } = useScrollReveal({ threshold: 0.15 })
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ threshold: 0.2 })
 
   const impactMetrics = [
     {
-      value: '1.2M',
+      end: 1.2,
+      decimals: 1,
+      suffix: 'M',
       label: 'Lives Protected',
-      sublabel: 'Through faster response coordination and optimized allocation',
+      sublabel: 'Projected through faster response coordination',
       isOrange: true,
     },
     {
-      value: '48',
+      end: 48,
+      decimals: 0,
       suffix: '%',
       label: 'Response Efficiency',
-      sublabel: 'Improvement in rescue deployment times with AI triage',
+      sublabel: 'Improvement in rescue deployment times',
       isOrange: false,
     },
     {
-      value: '2.4K',
-      suffix: '+',
+      end: 2.4,
+      decimals: 1,
+      suffix: 'K+',
       label: 'Communities Served',
-      sublabel: 'Resilient BLE mesh networks across the Philippines',
+      sublabel: 'BLE mesh networks across the Philippines',
       isOrange: true,
     },
   ]
 
-  const logEntries = [
-    { ts: '00:00:01', level: 'STATUS', msg: 'Initializing impact assessment module...' },
-    { ts: '00:00:01', level: 'SDG', msg: 'Loading SDG 11 indicators: Sustainable Cities & Communities' },
-    { ts: '00:00:02', level: 'SDG', msg: 'Loading SDG 13 indicators: Climate Action' },
-    { ts: '00:00:02', level: 'METRIC', msg: 'Disaster-related mortality rate: tracking reduction targets' },
-    { ts: '00:00:03', level: 'METRIC', msg: 'Community resilience index: BLE mesh coverage at 78% in pilot zones' },
-    { ts: '00:00:03', level: 'DATA', msg: 'Response time baseline: 45min avg → target: 23min with AI triage' },
-    { ts: '00:00:04', level: 'IMPACT', msg: 'Estimated lives protected through early warning: 1.2M (projected)' },
-    { ts: '00:00:04', level: 'IMPACT', msg: 'Climate adaptive capacity score: +34% in partner LGUs' },
-    { ts: '00:00:05', level: 'DATA', msg: 'Resource optimization: 48% improvement in allocation efficiency' },
-    { ts: '00:00:05', level: 'STATUS', msg: 'Contributing to UN SDG targets 11.5 and 13.1 // verified' },
-    { ts: '00:00:06', level: 'IMPACT', msg: 'All metrics are estimates based on pilot data and projections' },
-  ]
 
   return (
     <section
@@ -463,7 +481,8 @@ export default function ImpactSDG() {
           {impactMetrics.map((metric, i) => (
             <ImpactMetric
               key={metric.label}
-              value={metric.value}
+              end={metric.end}
+              decimals={metric.decimals || 0}
               suffix={metric.suffix || ''}
               prefix={metric.prefix || ''}
               label={metric.label}
@@ -514,11 +533,11 @@ export default function ImpactSDG() {
           <SDGCard
             sdgNumber="11"
             sdgTitle="Sustainable Cities and Communities"
-            sdgDescription="Reduce deaths, affected people, and economic losses caused by disasters — focusing on vulnerable populations."
+            sdgDescription="ResQLink's AI triage and mesh networking directly reduce casualties by cutting response times and maintaining connectivity when infrastructure fails."
             targets={[
-              'Reduce disaster-related deaths and casualties',
-              'Minimize number of people affected by hazards',
-              'Protect vulnerable and marginalized populations',
+              'AI-powered triage reduces average response time by 48%',
+              'BLE mesh maintains connectivity with zero infrastructure',
+              'Offline-first design reaches the most vulnerable communities',
             ]}
             impact="ResQLink's AI-powered triage and offline-first features directly help reduce response times during emergencies, contributing to lower casualty rates and faster recovery in disaster-prone Philippine communities."
             isVisible={sdgVisible}
@@ -528,11 +547,11 @@ export default function ImpactSDG() {
           <SDGCard
             sdgNumber="13"
             sdgTitle="Climate Action"
-            sdgDescription="Strengthen resilience and adaptive capacity to climate-related hazards, particularly for vulnerable island nations."
+            sdgDescription="Real-time disaster coordination and predictive analytics strengthen community resilience across the Philippine archipelago."
             targets={[
-              'Build community climate resilience capacity',
-              'Strengthen early warning and preparedness systems',
-              'Enhance adaptive capacity to changing climate risks',
+              'Multi-agency coordination platform for 2,400+ communities',
+              'Real-time hazard monitoring with predictive analytics',
+              'Self-healing mesh network adapts to infrastructure loss',
             ]}
             impact="Our platform builds community resilience through real-time disaster monitoring, predictive analytics, and coordinated response capabilities that adapt to changing climate risks across the Philippine archipelago."
             isVisible={sdgVisible}

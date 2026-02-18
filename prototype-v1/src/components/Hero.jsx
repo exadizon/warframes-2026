@@ -339,6 +339,193 @@ function StatusBadge({ label, value, status = "nominal" }) {
   );
 }
 
+// Live incident simulation — demonstrates the product working in real time
+function LiveIncidentDemo() {
+  const [phase, setPhase] = React.useState(0);
+
+  React.useEffect(() => {
+    const timers = [
+      setTimeout(() => setPhase(1), 4000),
+      setTimeout(() => setPhase(2), 6200),
+      setTimeout(() => setPhase(3), 8400),
+      setTimeout(() => setPhase(4), 11500),
+      setTimeout(() => setPhase(0), 12500),
+    ];
+    return () => timers.forEach(clearTimeout);
+  }, []);
+
+  if (phase === 0) return null;
+
+  const statusColor =
+    phase === 3 ? "#22C55E" : phase === 2 ? "#F59E0B" : "#00299A";
+  const statusText =
+    phase === 1
+      ? "NEW SOS REPORT"
+      : phase === 2
+        ? "AI TRIAGE"
+        : "TEAM DISPATCHED";
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: "16px",
+        right: "16px",
+        width: "220px",
+        backgroundColor: "rgba(255, 255, 255, 0.95)",
+        backdropFilter: "blur(12px)",
+        border: `1px solid ${phase === 3 ? "rgba(34, 197, 94, 0.3)" : "var(--border-light)"}`,
+        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
+        overflow: "hidden",
+        opacity: phase === 4 ? 0 : 1,
+        transform: phase === 4 ? "translateX(8px)" : "translateX(0)",
+        transition: "all 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        animation:
+          phase === 1
+            ? "slideInNotification 500ms cubic-bezier(0.16, 1, 0.3, 1)"
+            : "none",
+        zIndex: 10,
+        pointerEvents: "none",
+      }}
+    >
+      <div
+        style={{
+          height: "3px",
+          backgroundColor: statusColor,
+          transition: "background-color 300ms ease",
+        }}
+      />
+      <div style={{ padding: "10px 12px" }}>
+        {/* Header */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: "6px",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "8px",
+              fontWeight: 700,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: statusColor,
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+            }}
+          >
+            <span
+              style={{
+                width: 4,
+                height: 4,
+                borderRadius: "50%",
+                backgroundColor: statusColor,
+                animation:
+                  phase < 3
+                    ? "status-blink 1s ease-in-out infinite"
+                    : "none",
+              }}
+            />
+            {statusText}
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "7px",
+              letterSpacing: "0.1em",
+              color: "var(--text-muted)",
+            }}
+          >
+            LIVE
+          </span>
+        </div>
+
+        {/* Incident details */}
+        <div
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "10px",
+            lineHeight: 1.5,
+            color: "var(--text-secondary)",
+            fontWeight: 500,
+          }}
+        >
+          Flooding — 3 persons trapped
+        </div>
+        <div
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "8px",
+            color: "var(--text-muted)",
+            marginTop: "3px",
+          }}
+        >
+          14.5892°N, 120.9813°E · Brgy. San Antonio
+        </div>
+
+        {/* Processing phases */}
+        {phase >= 2 && (
+          <div
+            style={{
+              marginTop: "8px",
+              paddingTop: "7px",
+              borderTop: "1px solid var(--border-lighter)",
+              fontFamily: "var(--font-mono)",
+              fontSize: "9px",
+              lineHeight: 1.6,
+              animation: "fadeInUp 300ms ease",
+            }}
+          >
+            {phase === 2 && (
+              <div
+                style={{
+                  color: "#F59E0B",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "5px",
+                }}
+              >
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: "10px",
+                    height: "10px",
+                    border: "1.5px solid #F59E0B",
+                    borderTopColor: "transparent",
+                    borderRadius: "50%",
+                    animation: "spin 0.8s linear infinite",
+                  }}
+                />
+                Analyzing severity...
+              </div>
+            )}
+            {phase >= 3 && (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "3px",
+                }}
+              >
+                <div style={{ color: "#22C55E", fontWeight: 600 }}>
+                  Severity: CRITICAL (8.7/10)
+                </div>
+                <div style={{ color: "var(--text-secondary)" }}>
+                  Rescue Team Bravo dispatched
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Hero() {
   const { ref: heroRef, isVisible: heroVisible } = useScrollReveal({
     threshold: 0.05,
@@ -538,6 +725,9 @@ export default function Hero() {
               }}
             >
               <TerrainCanvas />
+
+              {/* Live incident simulation overlay */}
+              <LiveIncidentDemo />
 
               {/* Map legend overlay */}
               <div
@@ -848,6 +1038,21 @@ export default function Hero() {
         @keyframes cursor-blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }
+        }
+
+        @keyframes slideInNotification {
+          from { opacity: 0; transform: translateX(20px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
 
         @media (max-width: 900px) {

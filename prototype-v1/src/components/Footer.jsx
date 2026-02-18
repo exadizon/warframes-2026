@@ -460,7 +460,7 @@ export default function Footer() {
                 letterSpacing: "0.04em",
               }}
             >
-              © 2025 ResQLink Platform. All rights reserved.
+              © 2026 ResQLink Platform. All rights reserved.
             </span>
             <span
               style={{
