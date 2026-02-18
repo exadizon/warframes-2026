@@ -381,7 +381,7 @@ export default function ImpactSDG() {
             style={{ marginTop: 'var(--space-4)', marginBottom: 'var(--space-4)' }}
           >
             Measurable Impact,{' '}
-            <span style={{ fontStyle: 'italic', color: 'var(--text-secondary)' }}>
+            <span style={{ fontStyle: 'italic', color: 'var(--accent-red)' }}>
               Global Resilience
             </span>
           </h2>
@@ -523,7 +523,7 @@ export default function ImpactSDG() {
               }}
             >
               Ready to Transform{' '}
-              <span style={{ fontStyle: 'italic', color: 'rgba(255, 255, 255, 0.6)' }}>
+              <span style={{ fontStyle: 'italic', color: 'var(--accent-red)' }}>
                 Disaster Response?
               </span>
             </h2>

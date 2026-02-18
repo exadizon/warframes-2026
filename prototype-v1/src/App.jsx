@@ -106,7 +106,7 @@ function FeaturesStrip() {
             <h2 className="heading-2" style={{ marginTop: "var(--space-3)" }}>
               Every Feature Designed{" "}
               <span
-                style={{ fontStyle: "italic", color: "var(--text-secondary)" }}
+                style={{ fontStyle: "italic", color: "var(--accent-red)" }}
               >
                 to Save Lives
               </span>
@@ -422,7 +422,7 @@ function ResilienceBanner() {
           >
             Smart, Resilient,{" "}
             <span
-              style={{ fontStyle: "italic", color: "rgba(255, 255, 255, 0.5)" }}
+              style={{ fontStyle: "italic", color: "var(--accent-red)" }}
             >
               and Reliable
             </span>
@@ -757,7 +757,7 @@ function LoadingScreen({ onComplete }) {
         </span>
         <span
           style={{
-            fontFamily: '"DM Serif Display", serif',
+            fontFamily: '"Playfair Display", serif',
             fontSize: "clamp(24px, 3vw, 36px)",
             letterSpacing: "0.12em",
             color: "rgba(255, 255, 255, 0.95)",

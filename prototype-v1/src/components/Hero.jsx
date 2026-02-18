@@ -632,11 +632,11 @@ export default function Hero() {
                 maxWidth: "900px",
               }}
             >
-              Actionable Intelligence{" "}
+              <span style={{ color: "var(--accent-orange)" }}>Actionable Intelligence</span>{" "}
               <span
                 style={{
                   display: "block",
-                  color: "var(--text-secondary)",
+                  color: "var(--accent-red)",
                   fontStyle: "italic",
                 }}
               >

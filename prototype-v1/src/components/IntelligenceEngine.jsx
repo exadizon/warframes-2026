@@ -390,9 +390,10 @@ export default function IntelligenceEngine() {
             style={{
               marginTop: "var(--space-4)",
               marginBottom: "var(--space-4)",
+              color: "var(--accent-red)",
             }}
           >
-            AI-Powered Intelligence
+            AI-Powered <span style={{ color: "var(--accent-orange)" }}>Intelligence</span>
           </h2>
 
           <p className="body-lg" style={{ maxWidth: "600px" }}>

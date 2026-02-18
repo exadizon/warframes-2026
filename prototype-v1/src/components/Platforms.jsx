@@ -503,7 +503,7 @@ export default function Platforms() {
             >
               One Application,{" "}
               <span
-                style={{ fontStyle: "italic", color: "var(--text-secondary)" }}
+                style={{ fontStyle: "italic", color: "var(--accent-red)" }}
               >
                 Multiple Stakeholders
               </span>

@@ -648,9 +648,9 @@ export default function BayanihanMesh() {
               The Bayanihan Mesh
             </span>
             <h2 className="heading-1" style={{ marginTop: "var(--space-4)" }}>
-              Communication{" "}
+              <span style={{ color: "var(--accent-orange)" }}>Communication</span>{" "}
               <span
-                style={{ fontStyle: "italic", color: "var(--text-secondary)" }}
+                style={{ fontStyle: "italic", color: "var(--accent-red)" }}
               >
                 Without Towers
               </span>
