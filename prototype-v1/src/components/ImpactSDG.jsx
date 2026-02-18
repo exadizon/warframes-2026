@@ -494,32 +494,6 @@ export default function ImpactSDG() {
           ))}
         </div>
 
-        {/* Estimate disclaimer */}
-        <div
-          style={{
-            textAlign: 'center',
-            marginTop: 'calc(var(--space-6) * -1)',
-            marginBottom: 'var(--space-16)',
-            opacity: metricsVisible ? 1 : 0,
-            transition: 'opacity 600ms ease 800ms',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '10px',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: 'var(--text-muted)',
-              padding: '4px 12px',
-              border: '1px solid var(--border-lighter)',
-              backgroundColor: 'var(--bg-secondary)',
-            }}
-          >
-            * All metrics are estimates based on pilot data and projections
-          </span>
-        </div>
-
         {/* SDG Cards */}
         <div
           ref={sdgRef}

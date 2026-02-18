@@ -292,78 +292,9 @@ export default function Footer() {
                 maxWidth: "360px",
               }}
             >
-              AI-Powered Multi-Hazard Coordination Platform. Transforming
-              disaster response with real-time intelligence, BLE mesh
-              resilience, and multi-agency collaboration for Philippine
-              communities.
+              AI-Powered Multi-Hazard Coordination Platform. Real-time intelligence,
+              BLE mesh resilience, and multi-agency collaboration for disaster response.
             </p>
-
-            {/* Affiliation */}
-            <div
-              style={{
-                padding: "var(--space-4) var(--space-5)",
-                borderLeft: "2px solid var(--accent-orange)",
-                backgroundColor: "var(--accent-orange-soft)",
-                marginTop: "var(--space-2)",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "11px",
-                  lineHeight: 1.65,
-                  color: "var(--text-secondary)",
-                }}
-              >
-                Developed for Undergraduate Thesis under the{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  College of Computing and Information Sciences
-                </strong>{" "}
-                at the{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  University of Makati
-                </strong>
-                . In partnership with{" "}
-                <strong style={{ color: "var(--accent-orange)" }}>
-                  UMak KALASAG DRRM
-                </strong>
-                .
-              </p>
-            </div>
-
-            {/* Contact info cards */}
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "var(--space-4)",
-                marginTop: "var(--space-4)",
-              }}
-            >
-              <ContactCard
-                icon={<AlertTriangle size={14} />}
-                label="Emergency Hotline"
-                value="911 (Available 24/7)"
-                isVisible={gridVisible}
-                delay={200}
-              />
-              <ContactCard
-                icon={<Mail size={14} />}
-                label="Technical Support"
-                value="jvillarosa.a12240987@umak.edu.ph"
-                href="mailto:jvillarosa.a12240987@umak.edu.ph"
-                isVisible={gridVisible}
-                delay={300}
-              />
-              <ContactCard
-                icon={<Handshake size={14} />}
-                label="Partnership Inquiries"
-                value="mcuizon.a12241782@umak.edu.ph"
-                href="mailto:mcuizon.a12241782@umak.edu.ph"
-                isVisible={gridVisible}
-                delay={400}
-              />
-            </div>
           </div>
 
           {/* Navigation Column */}
@@ -395,40 +326,7 @@ export default function Footer() {
           />
         </div>
 
-        {/* Disclaimer bar */}
-        <div
-          style={{
-            padding: "var(--space-4) 0",
-            marginBottom: "var(--space-6)",
-            borderBottom: "1px solid var(--border-lighter)",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: "10px",
-              lineHeight: 1.7,
-              color: "var(--text-muted)",
-              maxWidth: "800px",
-            }}
-          >
-            <strong
-              style={{
-                color: "var(--text-tertiary)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-              }}
-            >
-              Disclaimer:
-            </strong>{" "}
-            ResQLink is a prototype platform designed for academic research and
-            demonstration purposes. Response time improvements and impact
-            metrics referenced on this page are estimates based on pilot data
-            and projections. This platform does not guarantee emergency
-            outcomes. Always contact official emergency services (911) in
-            life-threatening situations.
-          </p>
-        </div>
+
 
         {/* Bottom Bar */}
         <div
