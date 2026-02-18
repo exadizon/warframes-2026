@@ -5,9 +5,9 @@
   "type": "module",
   "description": "ResQLink Landing Page Prototype for Warframes 2026 UI/UX Competition",
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx vite build",
-    "preview": "npx vite preview"
+    "dev": "vite",
+    "build": "node node_modules/vite/bin/vite.js build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
