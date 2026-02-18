@@ -43,6 +43,7 @@ function FeaturesStrip() {
       description:
         "One-tap emergency reporting with GPS location and AI severity assessment.",
       tags: ["GPS Auto-Location", "Photo Evidence", "AI Scoring"],
+      isEmergency: true,
     },
     {
       icon: <Clock size={20} />,
@@ -170,10 +171,15 @@ function FeatureCard({
   title,
   description,
   tags,
+  isEmergency = false,
   isVisible = false,
   delay = 0,
 }) {
   const [hovered, setHovered] = useState(false);
+
+  const accentColor = isEmergency && hovered ? "var(--accent-red)" : "var(--accent-orange)";
+  const accentSoft = isEmergency && hovered ? "var(--accent-red-soft)" : "var(--accent-orange-soft)";
+  const borderOrange = isEmergency && hovered ? "rgba(235, 67, 58, 0.3)" : "var(--border-orange)";
 
   return (
     <div
@@ -196,7 +202,7 @@ function FeatureCard({
           background-color 300ms ease,
           box-shadow 300ms ease
         `,
-        boxShadow: hovered ? "inset 0 3px 0 var(--accent-orange)" : "none",
+        boxShadow: hovered ? `inset 0 3px 0 ${accentColor}` : "none",
       }}
     >
       {/* Large background number */}
@@ -209,7 +215,9 @@ function FeatureCard({
           fontSize: "clamp(40px, 4vw, 56px)",
           fontWeight: 800,
           lineHeight: 1,
-          color: hovered ? "rgba(0, 41, 154, 0.05)" : "var(--bg-tertiary)",
+          color: hovered
+            ? (isEmergency ? "rgba(235, 67, 58, 0.06)" : "rgba(0, 41, 154, 0.05)")
+            : "var(--bg-tertiary)",
           transition: "color 300ms ease",
           userSelect: "none",
           pointerEvents: "none",
@@ -227,11 +235,11 @@ function FeatureCard({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          border: `1px solid ${hovered ? "var(--border-orange)" : "var(--border-light)"}`,
+          border: `1px solid ${hovered ? borderOrange : "var(--border-light)"}`,
           backgroundColor: hovered
-            ? "var(--accent-orange-soft)"
+            ? accentSoft
             : "var(--bg-secondary)",
-          color: hovered ? "var(--accent-orange)" : "var(--text-secondary)",
+          color: hovered ? accentColor : "var(--text-secondary)",
           transition: "all 300ms ease",
         }}
       >
@@ -284,10 +292,10 @@ function FeatureCard({
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               padding: "2px 6px",
-              border: `1px solid ${hovered ? "var(--border-orange)" : "var(--border-light)"}`,
-              color: hovered ? "var(--accent-orange)" : "var(--text-muted)",
+              border: `1px solid ${hovered ? borderOrange : "var(--border-light)"}`,
+              color: hovered ? accentColor : "var(--text-muted)",
               backgroundColor: hovered
-                ? "var(--accent-orange-soft)"
+                ? accentSoft
                 : "transparent",
               transition: "all 300ms ease",
               whiteSpace: "nowrap",
@@ -325,16 +333,19 @@ function ResilienceBanner() {
       icon: <Radio size={18} />,
       title: "BLE Mesh Network",
       description: "Device-to-device comms without infrastructure",
+      iconColor: "var(--accent-orange)",
     },
     {
       icon: <Brain size={18} />,
       title: "AI Triage Engine",
       description: "ML-driven intelligent priority ranking",
+      iconColor: "#EB433A",
     },
     {
       icon: <Zap size={18} />,
       title: "Smart Matching",
       description: "Efficient rescuer-to-incident assignment",
+      iconColor: "var(--accent-orange)",
     },
   ];
 
@@ -422,7 +433,7 @@ function ResilienceBanner() {
               fontFamily: "var(--font-mono)",
               fontSize: "13px",
               lineHeight: 1.75,
-              color: "rgba(255, 255, 255, 0.45)",
+              color: "rgba(255, 255, 255, 0.6)",
               maxWidth: "440px",
             }}
           >
@@ -467,8 +478,9 @@ function ResilienceBanner() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  border: "1px solid rgba(255, 255, 255, 0.08)",
-                  backgroundColor: "rgba(255, 255, 255, 0.03)",
+                  border: "1px solid rgba(255, 255, 255, 0.12)",
+                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  color: pillar.iconColor || "rgba(255, 255, 255, 0.7)",
                   flexShrink: 0,
                   fontSize: "18px",
                 }}
@@ -484,7 +496,7 @@ function ResilienceBanner() {
                     fontSize: "13px",
                     fontWeight: 600,
                     letterSpacing: "0.04em",
-                    color: "rgba(255, 255, 255, 0.85)",
+                    color: "rgba(255, 255, 255, 0.92)",
                   }}
                 >
                   {pillar.title}
@@ -494,7 +506,7 @@ function ResilienceBanner() {
                     fontFamily: "var(--font-mono)",
                     fontSize: "12px",
                     lineHeight: 1.6,
-                    color: "rgba(255, 255, 255, 0.35)",
+                    color: "rgba(255, 255, 255, 0.55)",
                   }}
                 >
                   {pillar.description}

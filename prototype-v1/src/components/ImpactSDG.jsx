@@ -31,9 +31,25 @@ function AnimatedNumber({ end, decimals = 0, suffix = '', prefix = '', isVisible
 }
 
 // Animated hollow number with counter
-function ImpactMetric({ end, decimals = 0, suffix = '', prefix = '', label, sublabel, isOrange = false, isVisible = false, delay = 0 }) {
+function ImpactMetric({ end, decimals = 0, suffix = '', prefix = '', label, sublabel, isOrange = false, isRed = false, isVisible = false, delay = 0 }) {
+  const [isHovered, setIsHovered] = React.useState(false)
+
+  const strokeColor = isRed
+    ? '2px var(--accent-red)'
+    : isOrange
+      ? '2px var(--accent-orange)'
+      : '2px var(--text-primary)'
+
+  const accentColor = isRed
+    ? 'var(--accent-red)'
+    : isOrange
+      ? 'var(--accent-orange)'
+      : 'var(--text-primary)'
+
   return (
     <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -41,10 +57,27 @@ function ImpactMetric({ end, decimals = 0, suffix = '', prefix = '', label, subl
         gap: 'var(--space-3)',
         textAlign: 'center',
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-        transition: `all 800ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
+        transform: isVisible ? (isHovered ? 'translateY(-4px)' : 'translateY(0)') : 'translateY(30px)',
+        transition: `all 600ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
+        padding: 'var(--space-8) var(--space-4)',
+        position: 'relative',
+        cursor: 'default',
       }}
     >
+      {/* Top accent bar */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: isHovered ? '60%' : '24px',
+          height: '3px',
+          backgroundColor: accentColor,
+          transition: 'width 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
+      />
+
       {/* Giant hollow number */}
       <div
         style={{
@@ -53,7 +86,7 @@ function ImpactMetric({ end, decimals = 0, suffix = '', prefix = '', label, subl
           lineHeight: 1,
           letterSpacing: '-0.03em',
           color: 'transparent',
-          WebkitTextStroke: isOrange ? '2px var(--accent-orange)' : '2px var(--text-primary)',
+          WebkitTextStroke: strokeColor,
           userSelect: 'none',
           position: 'relative',
         }}
@@ -76,7 +109,7 @@ function ImpactMetric({ end, decimals = 0, suffix = '', prefix = '', label, subl
         {label}
       </div>
 
-      {/* Sublabel — log-style description */}
+      {/* Sublabel */}
       <div
         style={{
           fontFamily: 'var(--font-mono)',
@@ -283,106 +316,6 @@ function SDGCard({
   )
 }
 
-// Terminal-style log output for the impact section
-function ImpactLog({ entries, isVisible = false, baseDelay = 0 }) {
-  return (
-    <div
-      style={{
-        backgroundColor: 'var(--bg-dark)',
-        border: '1px solid var(--border-light)',
-        fontFamily: 'var(--font-mono)',
-        overflow: 'hidden',
-      }}
-    >
-      {/* Terminal header bar */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: 'var(--space-3) var(--space-5)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#FF5F56' }} />
-          <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#FFBD2E' }} />
-          <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#27C93F' }} />
-        </div>
-        <span
-          style={{
-            fontSize: '9px',
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            color: 'rgba(255, 255, 255, 0.25)',
-          }}
-        >
-          impact_metrics.log
-        </span>
-        <span
-          style={{
-            fontSize: '9px',
-            color: '#22C55E',
-            letterSpacing: '0.08em',
-          }}
-        >
-          ● LIVE
-        </span>
-      </div>
-
-      {/* Log entries */}
-      <div style={{ padding: 'var(--space-4) var(--space-5)' }}>
-        {entries.map((entry, i) => {
-          const levelColors = {
-            SDG: '#8B5CF6',
-            METRIC: '#3B82F6',
-            IMPACT: '#22C55E',
-            STATUS: 'var(--accent-orange)',
-            DATA: 'rgba(255, 255, 255, 0.4)',
-          }
-
-          return (
-            <div
-              key={i}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                fontSize: '10px',
-                lineHeight: 2.2,
-                opacity: isVisible ? 0.8 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(4px)',
-                transition: `all 400ms cubic-bezier(0.16, 1, 0.3, 1) ${baseDelay + i * 60}ms`,
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-              }}
-            >
-              <span style={{ color: 'rgba(255, 255, 255, 0.15)', minWidth: '56px' }}>
-                {entry.ts}
-              </span>
-              <span
-                style={{
-                  fontWeight: 600,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  color: levelColors[entry.level] || 'rgba(255, 255, 255, 0.4)',
-                  minWidth: '48px',
-                }}
-              >
-                {entry.level}
-              </span>
-              <span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
-                {entry.msg}
-              </span>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
 export default function ImpactSDG() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.2 })
   const { ref: metricsRef, isVisible: metricsVisible } = useScrollReveal({ threshold: 0.15 })
@@ -397,6 +330,7 @@ export default function ImpactSDG() {
       label: 'Lives Protected',
       sublabel: 'Projected through faster response coordination',
       isOrange: true,
+      isRed: false,
     },
     {
       end: 48,
@@ -405,6 +339,7 @@ export default function ImpactSDG() {
       label: 'Response Efficiency',
       sublabel: 'Improvement in rescue deployment times',
       isOrange: false,
+      isRed: true,
     },
     {
       end: 2.4,
@@ -413,6 +348,7 @@ export default function ImpactSDG() {
       label: 'Communities Served',
       sublabel: 'BLE mesh networks across the Philippines',
       isOrange: true,
+      isRed: false,
     },
   ]
 
@@ -488,6 +424,7 @@ export default function ImpactSDG() {
               label={metric.label}
               sublabel={metric.sublabel}
               isOrange={metric.isOrange}
+              isRed={metric.isRed}
               isVisible={metricsVisible}
               delay={i * 200}
             />
@@ -596,7 +533,7 @@ export default function ImpactSDG() {
                 fontFamily: 'var(--font-mono)',
                 fontSize: '13px',
                 lineHeight: 1.75,
-                color: 'rgba(255, 255, 255, 0.5)',
+              color: 'rgba(255, 255, 255, 0.65)',
                 maxWidth: '440px',
               }}
             >
@@ -606,7 +543,7 @@ export default function ImpactSDG() {
 
             <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-2)', flexWrap: 'wrap' }}>
               <button
-                className="btn btn--primary btn--pulse"
+                className="btn btn--danger btn--pulse"
                 style={{ fontSize: '13px' }}
               >
                 Join the Waitlist

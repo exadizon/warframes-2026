@@ -23,6 +23,16 @@
     --accent-orange-hover: #001f7a;
     --accent-orange-active: #001560;
 
+    /* Accent: Brand Red */
+    --accent-red: #EB433A;
+    --accent-red-dark: #661717;
+    --accent-red-soft: rgba(235, 67, 58, 0.12);
+    --accent-red-glow: rgba(235, 67, 58, 0.25);
+    --accent-red-hover: #d93830;
+
+    /* Accent: Bright Blue */
+    --accent-blue-bright: #003FC6;
+
     /* Text */
     --text-primary: #1a1c1e;
     --text-secondary: #4a4d52;
@@ -651,6 +661,25 @@ textarea {
     background-color: var(--accent-orange-active);
     transform: translateY(0);
     box-shadow: var(--shadow-orange);
+}
+
+.btn--danger {
+    font-size: var(--text-sm);
+    padding: var(--space-4) var(--space-8);
+    background-color: var(--accent-red);
+    color: white;
+    box-shadow: 0 2px 12px rgba(235, 67, 58, 0.25);
+}
+
+.btn--danger:hover {
+    background-color: var(--accent-red-hover);
+    box-shadow: 0 4px 20px rgba(235, 67, 58, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn--danger:active {
+    background-color: var(--accent-red-dark);
+    transform: translateY(0);
 }
 
 .btn--secondary {

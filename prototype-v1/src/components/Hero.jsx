@@ -357,7 +357,7 @@ function LiveIncidentDemo() {
   if (phase === 0) return null;
 
   const statusColor =
-    phase === 3 ? "#22C55E" : phase === 2 ? "#F59E0B" : "#00299A";
+    phase === 3 ? "#22C55E" : phase === 2 ? "#F59E0B" : "#EB433A";
   const statusText =
     phase === 1
       ? "NEW SOS REPORT"

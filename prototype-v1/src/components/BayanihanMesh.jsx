@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Radio, RefreshCw, BatteryLow, Shield, Waves } from "lucide-react";
+import { Radio, BatteryLow, Shield } from "lucide-react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 // Animated mesh network visualization on dark background
@@ -243,7 +243,7 @@ function MeshDiagram({ isVisible }) {
 
           // Outer pulse ring
           const pulseRadius = node.radius + pulsePhase * 20;
-          ctx.strokeStyle = `rgba(0, 41, 154, ${0.3 * (1 - pulsePhase)})`;
+          ctx.strokeStyle = `rgba(235, 67, 58, ${0.3 * (1 - pulsePhase)})`;
           ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.arc(nx, ny, pulseRadius, 0, Math.PI * 2);
@@ -253,7 +253,7 @@ function MeshDiagram({ isVisible }) {
           const pulse2 = (t * 3 + 1.5) % (Math.PI * 2);
           const p2Phase = Math.sin(pulse2) * 0.5 + 0.5;
           const pulse2Radius = node.radius + p2Phase * 30;
-          ctx.strokeStyle = `rgba(0, 41, 154, ${0.15 * (1 - p2Phase)})`;
+          ctx.strokeStyle = `rgba(235, 67, 58, ${0.15 * (1 - p2Phase)})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.arc(nx, ny, pulse2Radius, 0, Math.PI * 2);
@@ -268,22 +268,22 @@ function MeshDiagram({ isVisible }) {
             ny,
             node.radius,
           );
-          sosGrad.addColorStop(0, "rgba(0, 41, 154, 0.25)");
-          sosGrad.addColorStop(1, "rgba(0, 41, 154, 0.08)");
+          sosGrad.addColorStop(0, "rgba(235, 67, 58, 0.25)");
+          sosGrad.addColorStop(1, "rgba(235, 67, 58, 0.08)");
           ctx.fillStyle = sosGrad;
           ctx.beginPath();
           ctx.arc(nx, ny, node.radius, 0, Math.PI * 2);
           ctx.fill();
 
           // Node border
-          ctx.strokeStyle = "rgba(0, 41, 154, 0.7)";
+          ctx.strokeStyle = "rgba(235, 67, 58, 0.7)";
           ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.arc(nx, ny, node.radius, 0, Math.PI * 2);
           ctx.stroke();
 
           // SOS icon
-          ctx.fillStyle = "#00299A";
+          ctx.fillStyle = "#EB433A";
           ctx.font = 'bold 10px "JetBrains Mono", monospace';
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
@@ -291,7 +291,7 @@ function MeshDiagram({ isVisible }) {
 
           // Label
           ctx.font = '8px "JetBrains Mono", monospace';
-          ctx.fillStyle = "rgba(0, 41, 154, 0.6)";
+          ctx.fillStyle = "rgba(235, 67, 58, 0.6)";
           ctx.textAlign = "center";
           ctx.fillText(node.label.toUpperCase(), nx, ny + node.radius + 12);
         } else if (node.type === "gateway") {
@@ -526,9 +526,13 @@ function HopStep({
   number,
   label,
   isLast = false,
+  isRed = false,
   isVisible = false,
   delay = 0,
 }) {
+  const accentColor = isRed ? "var(--accent-red)" : "var(--accent-orange)";
+  const softBg = isRed ? "var(--accent-red-soft)" : "var(--accent-orange-soft)";
+
   return (
     <div
       style={{
@@ -548,12 +552,12 @@ function HopStep({
           alignItems: "center",
           justifyContent: "center",
           borderRadius: "50%",
-          border: "1.5px solid var(--accent-orange)",
-          backgroundColor: "var(--accent-orange-soft)",
+          border: `1.5px solid ${accentColor}`,
+          backgroundColor: softBg,
           fontFamily: "var(--font-mono)",
           fontSize: "10px",
           fontWeight: 700,
-          color: "var(--accent-orange)",
+          color: accentColor,
           flexShrink: 0,
         }}
       >
@@ -586,7 +590,7 @@ function HopStep({
           >
             <path
               d="M0 4H20M20 4L16 1M20 4L16 7"
-              stroke="var(--accent-orange)"
+              stroke={accentColor}
               strokeWidth="1"
               strokeOpacity="0.4"
             />
@@ -748,8 +752,8 @@ export default function BayanihanMesh() {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  border: "1.5px solid #00299A",
-                  backgroundColor: "rgba(0,41,154,0.2)",
+                  border: "1.5px solid #EB433A",
+                  backgroundColor: "rgba(235,67,58,0.2)",
                 }}
               />
               SOS Origin
@@ -883,7 +887,7 @@ export default function BayanihanMesh() {
                   marginBottom: "var(--space-3)",
                 }}
               >
-                From SOS to Rescue in 7 Hops
+                From SOS to Rescue in 4 Hops
               </h3>
               <p
                 style={{
@@ -905,44 +909,27 @@ export default function BayanihanMesh() {
               <HopStep
                 number="1"
                 label="Citizen taps SOS — BLE broadcast begins"
+                isRed
                 isVisible={contentVisible}
                 delay={100}
               />
               <HopStep
                 number="2"
-                label="Nearest phone picks up signal, relays forward"
+                label="Signal hops through community mesh nodes"
                 isVisible={contentVisible}
-                delay={200}
+                delay={250}
               />
               <HopStep
                 number="3"
-                label="Signal hops through community mesh nodes"
-                isVisible={contentVisible}
-                delay={300}
-              />
-              <HopStep
-                number="4"
-                label="Relay nodes amplify and route efficiently"
+                label="Relay nodes amplify and route to gateway"
                 isVisible={contentVisible}
                 delay={400}
               />
               <HopStep
-                number="5"
-                label="Signal reaches responder gateway device"
+                number="4"
+                label="Rescue team dispatched — ETA sent back"
                 isVisible={contentVisible}
-                delay={500}
-              />
-              <HopStep
-                number="6"
-                label="Gateway pushes alert to rescue dashboard"
-                isVisible={contentVisible}
-                delay={600}
-              />
-              <HopStep
-                number="7"
-                label="Rescue team dispatched — ETA sent back through mesh"
-                isVisible={contentVisible}
-                delay={700}
+                delay={550}
                 isLast
               />
             </div>
@@ -1016,40 +1003,82 @@ export default function BayanihanMesh() {
               <SpecBullet
                 icon={<Radio size={16} />}
                 title="Offline Mesh Networking"
-                description="BLE creates a device-to-device network using phones already in the community."
+                description="BLE creates a device-to-device network — no cell towers or internet required."
                 isVisible={specsVisible}
                 delay={0}
               />
               <SpecBullet
-                icon={<RefreshCw size={16} />}
-                title="Device-to-Device Relay"
-                description="Each smartphone relays SOS messages, extending range beyond Bluetooth limits."
-                isVisible={specsVisible}
-                delay={100}
-              />
-              <SpecBullet
                 icon={<BatteryLow size={16} />}
                 title="Ultra-Low Power"
-                description="BLE 5.0 operates for hours on minimal battery."
+                description="BLE 5.0 operates for hours on minimal battery, even during extended outages."
                 isVisible={specsVisible}
-                delay={200}
+                delay={150}
               />
               <SpecBullet
                 icon={<Shield size={16} />}
                 title="Self-Healing Network"
-                description="Auto-reroutes signals if any node goes offline."
+                description="Auto-reroutes signals when nodes go offline — resilient by design."
                 isVisible={specsVisible}
                 delay={300}
               />
-              <SpecBullet
-                icon={<Waves size={16} />}
-                title="Disaster-Hardened"
-                description="Built for events where 90%+ of cellular infrastructure is destroyed."
-                isVisible={specsVisible}
-                delay={400}
-              />
             </div>
           </div>
+        </div>
+
+        {/* Compact stats row */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "1px",
+            backgroundColor: "var(--border-light)",
+            border: "1px solid var(--border-light)",
+            marginTop: "1px",
+          }}
+        >
+          {[
+            { value: "< 84ms", label: "End-to-end latency" },
+            { value: "7+", label: "Max hop count" },
+            { value: "BLE 5.0", label: "Protocol standard" },
+            { value: "0", label: "Towers required" },
+          ].map((stat, i) => (
+            <div
+              key={stat.label}
+              style={{
+                backgroundColor: "var(--bg-card)",
+                padding: "var(--space-6) var(--space-5)",
+                textAlign: "center",
+                opacity: contentVisible ? 1 : 0,
+                transform: contentVisible ? "translateY(0)" : "translateY(12px)",
+                transition: `all 600ms cubic-bezier(0.16, 1, 0.3, 1) ${400 + i * 100}ms`,
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(20px, 2vw, 28px)",
+                  fontWeight: 700,
+                  color: i === 3 ? "var(--accent-red)" : "var(--accent-orange)",
+                  lineHeight: 1.2,
+                  marginBottom: "4px",
+                }}
+              >
+                {stat.value}
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "9px",
+                  fontWeight: 600,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "var(--text-muted)",
+                }}
+              >
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

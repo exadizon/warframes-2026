@@ -143,12 +143,12 @@ function StepCard({
   const subtextColor = isAccent
     ? "rgba(255, 255, 255, 0.7)"
     : isDark
-      ? "rgba(255, 255, 255, 0.55)"
+      ? "rgba(255, 255, 255, 0.7)"
       : "var(--text-secondary)";
   const mutedColor = isAccent
     ? "rgba(255, 255, 255, 0.4)"
     : isDark
-      ? "rgba(255, 255, 255, 0.3)"
+      ? "rgba(255, 255, 255, 0.45)"
       : "var(--text-muted)";
   const borderColor = isAccent
     ? "rgba(255, 255, 255, 0.2)"
