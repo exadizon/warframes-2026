@@ -391,7 +391,7 @@ textarea {
 }
 
 .section--dark {
-    background-color: var(--bg-dark);
+    background: linear-gradient(135deg, #1a1c1e 0%, #1f2227 40%, #1a1c1e 70%, #1d1f23 100%);
     color: var(--text-inverse);
 }
 
@@ -754,7 +754,7 @@ textarea {
 }
 
 .card--dark {
-    background-color: var(--bg-dark);
+    background: linear-gradient(160deg, #1a1c1e 0%, #22252a 50%, #1d1f23 100%);
     border-color: rgba(255, 255, 255, 0.08);
     color: var(--text-inverse);
 }
@@ -894,7 +894,7 @@ textarea {
 }
 
 .bento__cell--dark {
-    background-color: var(--bg-dark);
+    background: linear-gradient(160deg, #1a1c1e 0%, #22252a 50%, #1d1f23 100%);
     color: var(--text-inverse);
 }
 
@@ -1468,8 +1468,8 @@ textarea {
     background: repeating-linear-gradient(0deg,
             transparent,
             transparent 2px,
-            rgba(26, 28, 30, 0.015) 2px,
-            rgba(26, 28, 30, 0.015) 4px);
+            rgba(255, 255, 255, 0.012) 2px,
+            rgba(255, 255, 255, 0.012) 4px);
 }
 
 /* ── TOOLTIP ───────────────────────────────────────────────── */

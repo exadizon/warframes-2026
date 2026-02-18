@@ -135,8 +135,12 @@ function StepCard({
   const bgColor = isAccent
     ? "var(--accent-orange)"
     : isDark
-      ? "var(--bg-dark)"
+      ? "linear-gradient(160deg, #1a1c1e 0%, #22252a 50%, #1d1f23 100%)"
       : "var(--bg-card)";
+
+  const bgStyle = isDark && !isAccent
+    ? { background: bgColor }
+    : { backgroundColor: bgColor };
 
   const textColor =
     isAccent || isDark ? "rgba(255, 255, 255, 0.92)" : "var(--text-primary)";
@@ -153,7 +157,7 @@ function StepCard({
   const borderColor = isAccent
     ? "rgba(255, 255, 255, 0.2)"
     : isDark
-      ? "rgba(255, 255, 255, 0.08)"
+      ? "rgba(255, 255, 255, 0.1)"
       : "var(--border-lighter)";
   const bulletDotColor = isAccent
     ? "rgba(255, 255, 255, 0.8)"
@@ -163,13 +167,13 @@ function StepCard({
   const numberColor = isAccent
     ? "rgba(255, 255, 255, 0.12)"
     : isDark
-      ? "rgba(255, 255, 255, 0.04)"
+      ? "rgba(255, 255, 255, 0.06)"
       : "var(--bg-tertiary)";
 
   return (
     <div
       style={{
-        backgroundColor: bgColor,
+        ...bgStyle,
         padding: "var(--space-10)",
         position: "relative",
         display: "flex",
@@ -180,6 +184,20 @@ function StepCard({
         transition: `all 700ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
       }}
     >
+      {/* Subtle corner glow for dark cards */}
+      {isDark && !isAccent && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "50%",
+            height: "50%",
+            background: "radial-gradient(ellipse at top right, rgba(0, 41, 154, 0.07) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+      )}
       {/* Large background step number */}
       <span
         style={{

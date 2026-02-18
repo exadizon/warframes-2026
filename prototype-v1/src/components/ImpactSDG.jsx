@@ -469,8 +469,9 @@ export default function ImpactSDG() {
             delay={200}
           />
         </div>
+      </div>
 
-        {/* CTA Section — Ready to Transform */}
+        {/* CTA Section — Ready to Transform (Full Width) */}
         <div
           ref={ctaRef}
           id="waitlist"
@@ -478,8 +479,7 @@ export default function ImpactSDG() {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: '1px',
-            backgroundColor: 'var(--border-light)',
-            border: '1px solid var(--border-light)',
+            backgroundColor: 'rgba(255, 255, 255, 0.06)',
             opacity: ctaVisible ? 1 : 0,
             transform: ctaVisible ? 'translateY(0)' : 'translateY(20px)',
             transition: 'all 800ms cubic-bezier(0.16, 1, 0.3, 1)',
@@ -488,14 +488,28 @@ export default function ImpactSDG() {
           {/* Left — Mission CTA */}
           <div
             style={{
-              backgroundColor: 'var(--bg-dark)',
-              padding: 'var(--space-16) var(--space-12)',
+              background: 'linear-gradient(145deg, #1a1c1e 0%, #1f2328 45%, #1d1f23 100%)',
+              padding: 'var(--space-16) var(--space-16)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               gap: 'var(--space-6)',
+              position: 'relative',
+              overflow: 'hidden',
             }}
           >
+            {/* Accent glow */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '-20%',
+                left: '-10%',
+                width: '60%',
+                height: '80%',
+                background: 'radial-gradient(ellipse at center, rgba(235, 67, 58, 0.06) 0%, transparent 65%)',
+                pointerEvents: 'none',
+              }}
+            />
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -567,8 +581,8 @@ export default function ImpactSDG() {
           {/* Right — Early Access Benefits */}
           <div
             style={{
-              backgroundColor: 'var(--bg-card)',
-              padding: 'var(--space-12) var(--space-10)',
+              background: 'linear-gradient(160deg, #1a1c1e 0%, #22252a 50%, #1d1f23 100%)',
+              padding: 'var(--space-12) var(--space-16)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -581,7 +595,7 @@ export default function ImpactSDG() {
                 fontWeight: 600,
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
-                color: 'var(--text-muted)',
+                color: 'rgba(255, 255, 255, 0.4)',
                 display: 'block',
                 marginBottom: 'var(--space-8)',
               }}
@@ -630,10 +644,10 @@ export default function ImpactSDG() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      border: '1px solid var(--border-light)',
-                      backgroundColor: 'var(--bg-secondary)',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
                       flexShrink: 0,
-                      color: 'var(--accent-orange)',
+                      color: 'var(--accent-blue-bright)',
                     }}
                   >
                     {benefit.icon}
@@ -645,7 +659,7 @@ export default function ImpactSDG() {
                         fontSize: '12px',
                         fontWeight: 600,
                         letterSpacing: '0.04em',
-                        color: 'var(--text-primary)',
+                        color: 'rgba(255, 255, 255, 0.95)',
                       }}
                     >
                       {benefit.title}
@@ -655,7 +669,7 @@ export default function ImpactSDG() {
                         fontFamily: 'var(--font-mono)',
                         fontSize: '11px',
                         lineHeight: 1.65,
-                        color: 'var(--text-tertiary)',
+                        color: 'rgba(255, 255, 255, 0.45)',
                       }}
                     >
                       {benefit.desc}
@@ -666,7 +680,6 @@ export default function ImpactSDG() {
             </div>
           </div>
         </div>
-      </div>
 
       {/* Responsive overrides */}
       <style>{`
@@ -674,7 +687,7 @@ export default function ImpactSDG() {
           #impact .container > div:nth-child(3) {
             grid-template-columns: 1fr !important;
           }
-          #impact .container > div:last-child {
+          #impact > div:last-of-type {
             grid-template-columns: 1fr !important;
           }
         }

@@ -353,9 +353,10 @@ function ResilienceBanner() {
     <section
       ref={ref}
       style={{
-        borderTop: "1px solid var(--border-light)",
-        borderBottom: "1px solid var(--border-light)",
-        backgroundColor: "var(--bg-dark)",
+        borderTop: "1px solid rgba(255, 255, 255, 0.06)",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
+        background: "linear-gradient(135deg, #1a1c1e 0%, #1f2227 40%, #1a1c1e 70%, #1d1f23 100%)",
+        padding: "var(--space-24) 0",
         overflow: "hidden",
         position: "relative",
       }}
@@ -363,22 +364,49 @@ function ResilienceBanner() {
       {/* Subtle scan lines */}
       <div className="scanline-overlay" />
 
+      {/* Subtle radial glow */}
       <div
-        className="container"
+        style={{
+          position: "absolute",
+          top: "-40%",
+          left: "-10%",
+          width: "60%",
+          height: "180%",
+          background: "radial-gradient(ellipse at center, rgba(0, 41, 154, 0.06) 0%, transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-30%",
+          right: "-5%",
+          width: "50%",
+          height: "160%",
+          background: "radial-gradient(ellipse at center, rgba(235, 67, 58, 0.04) 0%, transparent 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+
+      <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: "1px",
-          backgroundColor: "rgba(255, 255, 255, 0.04)",
+          backgroundColor: "rgba(255, 255, 255, 0.06)",
           position: "relative",
           zIndex: 2,
+          maxWidth: "100%",
+          width: "100%",
         }}
       >
         {/* Left — Statement */}
         <div
           style={{
-            backgroundColor: "var(--bg-dark)",
-            padding: "var(--space-16) var(--space-10)",
+            backgroundColor: "transparent",
+            padding: "var(--space-16) var(--space-16)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -446,8 +474,8 @@ function ResilienceBanner() {
         {/* Right — Three pillars */}
         <div
           style={{
-            backgroundColor: "var(--bg-dark)",
-            padding: "var(--space-12) var(--space-10)",
+            backgroundColor: "transparent",
+            padding: "var(--space-12) var(--space-16)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -467,7 +495,7 @@ function ResilienceBanner() {
                 paddingBottom: i < pillars.length - 1 ? "var(--space-8)" : 0,
                 borderBottom:
                   i < pillars.length - 1
-                    ? "1px solid rgba(255, 255, 255, 0.05)"
+                    ? "1px solid rgba(255, 255, 255, 0.08)"
                     : "none",
               }}
             >
@@ -478,8 +506,8 @@ function ResilienceBanner() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  border: "1px solid rgba(255, 255, 255, 0.12)",
-                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  background: "linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%)",
                   color: pillar.iconColor || "rgba(255, 255, 255, 0.7)",
                   flexShrink: 0,
                   fontSize: "18px",
@@ -506,7 +534,7 @@ function ResilienceBanner() {
                     fontFamily: "var(--font-mono)",
                     fontSize: "12px",
                     lineHeight: 1.6,
-                    color: "rgba(255, 255, 255, 0.55)",
+                    color: "rgba(255, 255, 255, 0.5)",
                   }}
                 >
                   {pillar.description}
@@ -715,7 +743,7 @@ function LoadingScreen({ onComplete }) {
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        backgroundColor: "#1A1C1E",
+        background: "linear-gradient(135deg, #1a1c1e 0%, #1f2227 40%, #1a1c1e 70%, #1d1f23 100%)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
