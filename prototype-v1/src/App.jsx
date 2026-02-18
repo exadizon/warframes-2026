@@ -361,52 +361,20 @@ function ResilienceBanner() {
         position: "relative",
       }}
     >
-      {/* Subtle scan lines */}
-      <div className="scanline-overlay" />
-
-      {/* Subtle radial glow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-40%",
-          left: "-10%",
-          width: "60%",
-          height: "180%",
-          background: "radial-gradient(ellipse at center, rgba(0, 41, 154, 0.06) 0%, transparent 70%)",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-30%",
-          right: "-5%",
-          width: "50%",
-          height: "160%",
-          background: "radial-gradient(ellipse at center, rgba(235, 67, 58, 0.04) 0%, transparent 70%)",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
-      />
-
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          gap: "1px",
-          backgroundColor: "rgba(255, 255, 255, 0.06)",
           position: "relative",
-          zIndex: 2,
-          maxWidth: "100%",
+          maxWidth: "var(--max-width)",
           width: "100%",
+          margin: "0 auto",
         }}
       >
         {/* Left — Statement */}
         <div
           style={{
-            backgroundColor: "transparent",
-            padding: "var(--space-16) var(--space-16)",
+            padding: "var(--space-16) var(--space-8)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -474,8 +442,8 @@ function ResilienceBanner() {
         {/* Right — Three pillars */}
         <div
           style={{
-            backgroundColor: "transparent",
-            padding: "var(--space-12) var(--space-16)",
+            padding: "var(--space-12) var(--space-8)",
+            borderLeft: "1px solid rgba(255, 255, 255, 0.06)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",

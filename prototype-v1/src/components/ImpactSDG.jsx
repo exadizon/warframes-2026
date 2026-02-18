@@ -357,7 +357,7 @@ export default function ImpactSDG() {
     <section
       className="section section--bordered"
       id="impact"
-      style={{ backgroundColor: 'var(--bg-primary)' }}
+      style={{ backgroundColor: 'var(--bg-primary)', paddingBottom: 0 }}
     >
       <div className="container">
         {/* Section Header */}
@@ -471,215 +471,210 @@ export default function ImpactSDG() {
         </div>
       </div>
 
-        {/* CTA Section — Ready to Transform (Full Width) */}
+      {/* CTA Section — Ready to Transform (Full Width) */}
+      <div
+        style={{
+          background: 'linear-gradient(135deg, #1a1c1e 0%, #1f2227 40%, #1a1c1e 70%, #1d1f23 100%)',
+          width: '100%',
+        }}
+      >
         <div
           ref={ctaRef}
           id="waitlist"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            gap: '1px',
-            backgroundColor: 'rgba(255, 255, 255, 0.06)',
+            maxWidth: 'var(--max-width)',
+            width: '100%',
+            margin: '0 auto',
             opacity: ctaVisible ? 1 : 0,
             transform: ctaVisible ? 'translateY(0)' : 'translateY(20px)',
             transition: 'all 800ms cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         >
-          {/* Left — Mission CTA */}
-          <div
+        {/* Left — Mission CTA */}
+        <div
+          style={{
+            padding: 'var(--space-16) var(--space-8)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: 'var(--space-6)',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <span
             style={{
-              background: 'linear-gradient(145deg, #1a1c1e 0%, #1f2328 45%, #1d1f23 100%)',
-              padding: 'var(--space-16) var(--space-16)',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '10px',
+              fontWeight: 600,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'var(--accent-orange)',
               display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              gap: 'var(--space-6)',
-              position: 'relative',
-              overflow: 'hidden',
+              alignItems: 'center',
+              gap: '8px',
             }}
           >
-            {/* Accent glow */}
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '-20%',
-                left: '-10%',
-                width: '60%',
-                height: '80%',
-                background: 'radial-gradient(ellipse at center, rgba(235, 67, 58, 0.06) 0%, transparent 65%)',
-                pointerEvents: 'none',
-              }}
-            />
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
-                fontWeight: 600,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: 'var(--accent-orange)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-            >
-              <span style={{ width: 16, height: 1, backgroundColor: 'var(--accent-orange)' }} />
-              Join the Mission
+            <span style={{ width: 16, height: 1, backgroundColor: 'var(--accent-orange)' }} />
+            Join the Mission
+          </span>
+
+          <h2
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 'clamp(24px, 2.5vw, 40px)',
+              lineHeight: 1.2,
+              color: 'rgba(255, 255, 255, 0.95)',
+              maxWidth: '480px',
+            }}
+          >
+            Ready to Transform{' '}
+            <span style={{ fontStyle: 'italic', color: 'var(--accent-red)' }}>
+              Disaster Response?
             </span>
+          </h2>
 
-            <h2
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(24px, 2.5vw, 40px)',
-                lineHeight: 1.2,
-                color: 'rgba(255, 255, 255, 0.95)',
-                maxWidth: '480px',
-              }}
-            >
-              Ready to Transform{' '}
-              <span style={{ fontStyle: 'italic', color: 'var(--accent-red)' }}>
-                Disaster Response?
-              </span>
-            </h2>
-
-            <p
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '13px',
-                lineHeight: 1.75,
+          <p
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '13px',
+              lineHeight: 1.75,
               color: 'rgba(255, 255, 255, 0.65)',
-                maxWidth: '440px',
-              }}
-            >
-              Join communities, responders, and agencies building resilient disaster response
-              capabilities. Partner with ResQLink to contribute to global sustainability goals.
-            </p>
-
-            <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-2)', flexWrap: 'wrap' }}>
-              <button
-                className="btn btn--danger btn--pulse"
-                style={{ fontSize: '13px' }}
-              >
-                Join the Waitlist
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-              <button
-                className="btn btn--secondary"
-                style={{
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  fontSize: '11px',
-                }}
-              >
-                Partnership Inquiry
-              </button>
-            </div>
-          </div>
-
-          {/* Right — Early Access Benefits */}
-          <div
-            style={{
-              background: 'linear-gradient(160deg, #1a1c1e 0%, #22252a 50%, #1d1f23 100%)',
-              padding: 'var(--space-12) var(--space-16)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
+              maxWidth: '440px',
             }}
           >
-            <span
+            Join communities, responders, and agencies building resilient disaster response
+            capabilities. Partner with ResQLink to contribute to global sustainability goals.
+          </p>
+
+          <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-2)', flexWrap: 'wrap' }}>
+            <button
+              className="btn btn--danger btn--pulse"
+              style={{ fontSize: '13px' }}
+            >
+              Join the Waitlist
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              className="btn btn--secondary"
               style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
-                fontWeight: 600,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: 'rgba(255, 255, 255, 0.4)',
-                display: 'block',
-                marginBottom: 'var(--space-8)',
+                borderColor: 'rgba(255, 255, 255, 0.2)',
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '11px',
               }}
             >
-              Early Access Benefits
-            </span>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
-              {[
-                {
-                  icon: <Zap size={16} />,
-                  title: 'Early Access',
-                  desc: 'First to experience AI triage and mesh networking',
-                },
-                {
-                  icon: <FlaskConical size={16} />,
-                  title: 'Beta Testing',
-                  desc: 'Shape the platform with your direct feedback',
-                },
-                {
-                  icon: <Shield size={16} />,
-                  title: 'Priority Support',
-                  desc: 'Dedicated onboarding and technical support',
-                },
-                {
-                  icon: <Users size={16} />,
-                  title: 'LGU Partnerships',
-                  desc: 'Pilot programs with full integration support',
-                },
-              ].map((benefit, i) => (
-                <div
-                  key={benefit.title}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '16px',
-                    opacity: ctaVisible ? 1 : 0,
-                    transform: ctaVisible ? 'translateX(0)' : 'translateX(12px)',
-                    transition: `all 500ms cubic-bezier(0.16, 1, 0.3, 1) ${300 + i * 100}ms`,
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 36,
-                      height: 36,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                      flexShrink: 0,
-                      color: 'var(--accent-blue-bright)',
-                    }}
-                  >
-                    {benefit.icon}
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '12px',
-                        fontWeight: 600,
-                        letterSpacing: '0.04em',
-                        color: 'rgba(255, 255, 255, 0.95)',
-                      }}
-                    >
-                      {benefit.title}
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '11px',
-                        lineHeight: 1.65,
-                        color: 'rgba(255, 255, 255, 0.45)',
-                      }}
-                    >
-                      {benefit.desc}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+              Partnership Inquiry
+            </button>
           </div>
         </div>
+
+        {/* Right — Early Access Benefits */}
+        <div
+          style={{
+            padding: 'var(--space-12) var(--space-8)',
+            borderLeft: '1px solid rgba(255, 255, 255, 0.06)',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+          }}
+        >
+          <span
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '10px',
+              fontWeight: 600,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: 'rgba(255, 255, 255, 0.4)',
+              display: 'block',
+              marginBottom: 'var(--space-8)',
+            }}
+          >
+            Early Access Benefits
+          </span>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
+            {[
+              {
+                icon: <Zap size={16} />,
+                title: 'Early Access',
+                desc: 'First to experience AI triage and mesh networking',
+              },
+              {
+                icon: <FlaskConical size={16} />,
+                title: 'Beta Testing',
+                desc: 'Shape the platform with your direct feedback',
+              },
+              {
+                icon: <Shield size={16} />,
+                title: 'Priority Support',
+                desc: 'Dedicated onboarding and technical support',
+              },
+              {
+                icon: <Users size={16} />,
+                title: 'LGU Partnerships',
+                desc: 'Pilot programs with full integration support',
+              },
+            ].map((benefit, i) => (
+              <div
+                key={benefit.title}
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '16px',
+                  opacity: ctaVisible ? 1 : 0,
+                  transform: ctaVisible ? 'translateX(0)' : 'translateX(12px)',
+                  transition: `all 500ms cubic-bezier(0.16, 1, 0.3, 1) ${300 + i * 100}ms`,
+                }}
+              >
+                <div
+                  style={{
+                    width: 36,
+                    height: 36,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    flexShrink: 0,
+                    color: 'var(--accent-blue-bright)',
+                  }}
+                >
+                  {benefit.icon}
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      letterSpacing: '0.04em',
+                      color: 'rgba(255, 255, 255, 0.95)',
+                    }}
+                  >
+                    {benefit.title}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      lineHeight: 1.65,
+                      color: 'rgba(255, 255, 255, 0.45)',
+                    }}
+                  >
+                    {benefit.desc}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        </div>
+      </div>
 
       {/* Responsive overrides */}
       <style>{`
@@ -687,7 +682,7 @@ export default function ImpactSDG() {
           #impact .container > div:nth-child(3) {
             grid-template-columns: 1fr !important;
           }
-          #impact > div:last-of-type {
+          #impact > div:last-of-type > div {
             grid-template-columns: 1fr !important;
           }
         }
